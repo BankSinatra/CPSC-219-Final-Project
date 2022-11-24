@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.collections.FXCollections?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="50.0" prefWidth="100.0">
+         <children>
+            <Label text="Hello. Welcome to our program!" />
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="What is your sex?">
+               <HBox.margin>
+                  <Insets left="30.0" />
+               </HBox.margin></Label>
+            <ChoiceBox prefWidth="150.0">
+            <items>
+            <FXCollections fx:factory="observableArrayList">
+            	<String fx:value="Man" />
+            	<String fx:value="Woman" />
+            </FXCollections>
+            </items>
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            
+         </children>
+      </HBox>
+   </children>
+</VBox>
