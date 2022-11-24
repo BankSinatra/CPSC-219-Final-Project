@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.collections.FXCollections?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="Settings">
+               <HBox.margin>
+                  <Insets left="60.0" />
+               </HBox.margin></Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="What units of measurement would you like to use?">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin></Label>
+            <ChoiceBox prefWidth="150.0">
+            <items>
+            <FXCollections fx:factory="observableArrayList">
+            	<String fx:value="US" />
+            	<String fx:value="EU" />
+            </FXCollections>
+            </items>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="what is your sex?">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin></Label>
+            <ChoiceBox prefWidth="150.0">
+            <items>
+            <FXCollections fx:factory="observableArrayList">
+            	<String fx:value="Male" />
+            	<String fx:value="Female" />
+            </FXCollections>
+            </items>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label text="What size measurement did you want to change?">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin></Label>
+            <ChoiceBox prefWidth="150.0">
+            <items>
+            <FXCollections fx:factory="observableArrayList">
+            	<String fx:value="Waist" />
+            	<String fx:value="Hip" />
+            	<String fx:value="Circumference" />
+            	<String fx:value="Shoe size" />
+            	
+            </FXCollections>
+            </items>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            
+         </children>
+      </HBox>
+   </children>
+</VBox>
