@@ -2,8 +2,11 @@ package application;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 public class LaundryPalHomeController {
+	
+	Stage applicationStage;
 
     @FXML
     private Button btn_wash_30;
