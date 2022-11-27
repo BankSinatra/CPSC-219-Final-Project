@@ -1,79 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" >
-<Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
-  <panes>
-    <TitledPane animated="false" text="Washing">
-         <content>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-               </children>
-            </HBox>
-         </content></TitledPane>
-      <TitledPane animated="false" layoutX="10.0" layoutY="10.0" text="Drying">
-         <content>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-               </children>
-            </HBox>
-         </content>
-      </TitledPane>
-      <TitledPane animated="false" layoutX="10.0" layoutY="35.0" text="Ironing">
-         <content>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-               </children>
-            </HBox>
-         </content>
-      </TitledPane>
-      <TitledPane animated="false" layoutX="10.0" layoutY="60.0" text="Professional Cleaning">
-         <content>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-               </children>
-            </HBox>
-         </content>
-      </TitledPane>
-      <TitledPane animated="false" layoutX="10.0" layoutY="85.0" text="Bleaching">
-         <content>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Button" />
-               </children>
-            </HBox>
-         </content>
-      </TitledPane>
-  </panes>
-</Accordion>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+   <Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+     <panes>
+       <TitledPane animated="false" text="Washing">
+            <content>
+               <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <Button fx:id="btn_wash" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_wash_30" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_wash_40" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_wash_50" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_wash_60" mnemonicParsing="false" text="Button" />
+                        <Button fx:id="btn_hand_wash" mnemonicParsing="false" text="Button" />
+                        <Button fx:id="btn_do_not_wash" mnemonicParsing="false" text="Button" />
+                  </children>
+               </HBox>
+            </content>
+            </TitledPane>
+         <TitledPane animated="false" layoutX="10.0" layoutY="10.0" text="Drying">
+            <content>
+               <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tumble Drying" />
+                              <HBox>
+                                 <children>
+                                 <Button fx:id="btn_tumble_dry" mnemonicParsing="false" text="Button" />
+                                 <Button fx:id="btn_tumble_dry_low" mnemonicParsing="false" text="Button" />
+                                 <Button fx:id="btn_tumble_dry_normal" mnemonicParsing="false" text="Button" />
+                                 <Button fx:id="btn_do_not_tumble_dry" mnemonicParsing="false" text="Button" />
+                                 </children>
+                              </HBox>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Natural Drying" />
+                              <HBox layoutX="10.0" layoutY="26.0">
+                                 <children>
+                                    <Button fx:id="btn_dry" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_line_dry" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_dry_flat" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_drip_dry" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_dry_shade" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_line_dry_shade" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_dry_flat_shade" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_drip_dryshade" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                  </children>
+               </HBox>
+            </content>
+         </TitledPane>
+         <TitledPane animated="false" layoutX="10.0" layoutY="35.0" text="Ironing">
+            <content>
+               <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <Button fx:id="btn_iron" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_iron_low" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_iron_medium" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_iron_high" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_do_not_iron" mnemonicParsing="false" text="Button" />
+                  </children>
+               </HBox>
+            </content>
+         </TitledPane>
+            <TitledPane animated="false" layoutX="10.0" layoutY="35.0" text="Professional Cleaning">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dry Cleaning" />
+                              <HBox minWidth="-Infinity">
+                                 <children>
+                                    <Button fx:id="btn_pro_cleaning" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_hcs_only" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_hcs_gentle" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_hcs_very_gentle" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_pce_only" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_pce_gentle" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_pce_very_gentle" layoutX="218.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_no_chemical_clean" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
+                                 </children>
+                              </HBox>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wet Cleaning" />
+                              <HBox layoutX="10.0" layoutY="26.0" minWidth="-Infinity">
+                                 <children>
+                                    <Button fx:id="btn_wet_clean" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_wet_clean_gentle" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_wet_clean_very_gentle" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_no_wet_clean" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+            </TitledPane>
+         <TitledPane animated="false" layoutX="10.0" layoutY="85.0" text="Bleaching">
+            <content>
+               <HBox prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <Button fx:id="btn_bleach" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_bleach_ch" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_bleach_no_ch" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_do_not_bleach" mnemonicParsing="false" text="Button" />
+                  </children>
+               </HBox>
+            </content>
+         </TitledPane>
+     </panes>
+   </Accordion>
+   </children>
 
 </VBox>
