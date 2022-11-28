@@ -1,7 +1,12 @@
 package application;
 
+import java.io.FileInputStream;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class LaundryPalHomeController {
@@ -127,5 +132,17 @@ public class LaundryPalHomeController {
 
     @FXML
     private Button btn_iron_medium;
+    
+    public void initialize() {
+        try{
+        	
+            Image image1 = new Image(new FileInputStream("Resources/LaundrySymbols/Washing/Wash.svg.png"));
+            ImageView imageView = new ImageView(image1);
+            btn_wash.setGraphic(imageView);
+            btn_wash.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+        }catch(Exception e){
+            System.out.println("Oh no");
+        }
+    }
 
 }
