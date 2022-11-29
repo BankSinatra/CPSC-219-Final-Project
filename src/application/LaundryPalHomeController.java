@@ -51,25 +51,16 @@ public class LaundryPalHomeController {
 	    private Button btn_drip_dryshade;
 
 	    @FXML
-	    private HBox dry_cleaning_hbox;
-
-	    @FXML
 	    private Button btn_no_chemical_clean;
 
 	    @FXML
 	    private Button btn_dry_shade;
 
 	    @FXML
-	    private HBox dry_hbox;
-
-	    @FXML
 	    private Button btn_pce_only;
 
 	    @FXML
 	    private Button btn_line_dry;
-
-	    @FXML
-	    private HBox wet_cleaning_hbox;
 
 	    @FXML
 	    private Button btn_hcs_very_gentle;
@@ -85,9 +76,6 @@ public class LaundryPalHomeController {
 
 	    @FXML
 	    private Button btn_do_not_bleach;
-
-	    @FXML
-	    private HBox washing_hBox;
 
 	    @FXML
 	    private Button btn_pce_very_gentle;
@@ -129,9 +117,6 @@ public class LaundryPalHomeController {
 	    private Button btn_drip_dry;
 
 	    @FXML
-	    private HBox iron_hbox;
-
-	    @FXML
 	    private Button btn_hcs_only;
 
 	    @FXML
@@ -147,13 +132,7 @@ public class LaundryPalHomeController {
 	    private Button btn_iron_low;
 
 	    @FXML
-	    private HBox bleaching_hbox;
-
-	    @FXML
 	    private Button btn_bleach_no_ch;
-
-	    @FXML
-	    private HBox tumble_hbox;
 
 	    @FXML
 	    private Button btn_iron_medium;
