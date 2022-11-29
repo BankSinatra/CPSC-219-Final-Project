@@ -15,10 +15,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			VBox root = loader.load(new FileInputStream("src/application/SettingsPageUI.fxml"));
+			VBox root = loader.load(new FileInputStream("src/application/WelcomeScreen.fxml"));
 			Scene scene = new Scene(root,400,400);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Settings");
+			primaryStage.setTitle("Welcome Screen");
 			primaryStage.show();
 
 		} catch(Exception e) {
