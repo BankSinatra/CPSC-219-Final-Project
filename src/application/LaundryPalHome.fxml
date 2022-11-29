@@ -51,7 +51,7 @@
                                     <Button fx:id="btn_dry_shade" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
                                     <Button fx:id="btn_line_dry_shade" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
                                     <Button fx:id="btn_dry_flat_shade" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
-                                    <Button fx:id="btn_drip_dryshade" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
+                                    <Button fx:id="btn_drip_dry_shade" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
                                  </children>
                               </HBox>
                            </children>
@@ -112,8 +112,8 @@
                <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
                      <Button fx:id="btn_bleach" mnemonicParsing="false" text="Button" />
-                     <Button fx:id="btn_bleach_ch" mnemonicParsing="false" text="Button" />
-                     <Button fx:id="btn_bleach_no_ch" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_bleach_cl" mnemonicParsing="false" text="Button" />
+                     <Button fx:id="btn_bleach_no_cl" mnemonicParsing="false" text="Button" />
                      <Button fx:id="btn_do_not_bleach" mnemonicParsing="false" text="Button" />
                   </children>
                </HBox>

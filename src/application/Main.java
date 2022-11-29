@@ -1,12 +1,15 @@
 package application;
-	
+
 import java.io.FileInputStream;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.io.FileInputStream;
 import javafx.scene.layout.VBox;
 
 
@@ -21,13 +24,13 @@ public class Main extends Application {
 
 			Scene scene = new Scene(root, 700, 300);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Eyram's Grade Calculator");
+			primaryStage.setTitle("Laundry Pal");
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}
