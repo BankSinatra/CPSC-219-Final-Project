@@ -8,14 +8,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.collections.FXCollections?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneController">
    <children>
       <HBox prefHeight="50.0" prefWidth="100.0">
          <children>
-            <Label text="Hello. Welcome to our program!" />
+            <Label text="Hello. Welcome to our program!">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin></Label>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox prefHeight="171.0" prefWidth="826.0">
          <children>
             <Label text="What is your sex?">
                <HBox.margin>
@@ -35,5 +38,10 @@
             
          </children>
       </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" />
+      <Button mnemonicParsing="false" onAction="#switchToScene2" text="Switch to settings">
+         <VBox.margin>
+            <Insets left="20.0" />
+         </VBox.margin></Button>
    </children>
 </VBox>

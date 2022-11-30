@@ -15,8 +15,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			VBox root = loader.load(new FileInputStream("src/application/WelcomeScreen.fxml"));
-			Scene scene = new Scene(root,400,400);
+			VBox root = loader.load(new FileInputStream("src/application/WelcomeScreen2.fxml"));
+			Scene scene = new Scene(root,600,600);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Welcome Screen");
 			primaryStage.show();
