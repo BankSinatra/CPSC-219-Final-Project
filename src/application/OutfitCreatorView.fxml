@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneController">
    <children>
       <BorderPane prefHeight="100.0" prefWidth="800.0">
          <center>
@@ -62,7 +62,7 @@
       </GridPane>
       <BorderPane prefHeight="55.0" prefWidth="800.0">
          <left>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="166.0" text="Return to Home Screen" BorderPane.alignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#switchToHomeScene" prefHeight="40.0" prefWidth="166.0" text="Return to Home Screen" BorderPane.alignment="CENTER">
                <font>
                   <Font size="14.0" />
                </font>
