@@ -60,5 +60,27 @@
             </MenuButton>
          </children>
       </GridPane>
+      <BorderPane prefHeight="55.0" prefWidth="800.0">
+         <left>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="166.0" text="Return to Home Screen" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </left>
+         <right>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="168.0" text="Get Outfit" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets right="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </right>
+      </BorderPane>
    </children>
 </VBox>
