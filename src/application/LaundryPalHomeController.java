@@ -1,7 +1,14 @@
 package application;
 
 import java.io.FileInputStream;
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.image.Image;
@@ -9,15 +16,15 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class LaundryPalHomeController {
-	
-	Stage applicationStage;
+
+		Stage applicationStage;
 	
 		@FXML
 		private Button btn_wash;
 
 		@FXML
 	    private Button btn_wash_30;
-		
+
 	    @FXML
 	    private Button btn_wash_40;
 
@@ -133,6 +140,20 @@ public class LaundryPalHomeController {
 
 	    @FXML
 	    private Button btn_iron_medium;
+
+		@FXML
+		public Button btn_return_to_home;
+
+	private Stage stage;
+	private Scene scene;
+
+		public void switchToHomeScene (ActionEvent event) throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("HomeScreenView.fxml"));
+		stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		stage.setScene(scene);
+		stage.show();
+		}
     
 	    private void bindImage(FileInputStream file, Button btn){
 	        Image img = new Image(file);
@@ -143,6 +164,10 @@ public class LaundryPalHomeController {
 	        btn.setGraphic(imageView);
 	        btn.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
 	    }
+
+		private void iconPress(){
+
+		}
 	    
 	    public void initialize() {
 	        try{
