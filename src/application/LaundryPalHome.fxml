@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LaundryPalHomeController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LaundryPalHomeController">
    <children>
    <Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
      <panes>
@@ -104,7 +106,7 @@
                   </HBox>
                </content>
             </TitledPane>
-         <TitledPane animated="false" layoutX="10.0" layoutY="85.0" text="Bleaching">
+         <TitledPane animated="false" layoutX="10.0" layoutY="85.0" prefHeight="211.0" prefWidth="600.0" text="Bleaching">
             <content>
                <HBox prefHeight="100.0" prefWidth="200.0">
                   <children>
@@ -118,6 +120,18 @@
          </TitledPane>
      </panes>
    </Accordion>
+      <BorderPane prefHeight="50.0" prefWidth="200.0">
+         <left>
+            <Button mnemonicParsing="false" text="Return to Home Screen" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </left>
+      </BorderPane>
    </children>
 
 </VBox>
