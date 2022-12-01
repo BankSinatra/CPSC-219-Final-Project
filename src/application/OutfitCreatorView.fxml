@@ -51,8 +51,8 @@
                </GridPane.margin></TextField>
             <MenuButton mnemonicParsing="false" prefHeight="33.0" prefWidth="168.0" GridPane.columnIndex="1">
               <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
+                <MenuItem mnemonicParsing="false" text="Celsius" />
+                <MenuItem mnemonicParsing="false" text="Farenheit" />
               </items>
                <GridPane.margin>
                   <Insets left="10.0" />
