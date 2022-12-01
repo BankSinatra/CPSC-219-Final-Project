@@ -30,4 +30,20 @@ public class SceneController {
   stage.setScene(scene);
   stage.show();
  }
+ 
+ public void switchToHomeScene (ActionEvent event) throws IOException {
+	 Parent root = FXMLLoader.load(getClass().getResource("HomeScreenView.fxml"));
+	 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	 scene = new Scene(root);
+	 stage.setScene(scene);
+	 stage.show();
+ }
+ 
+ public void switchToClothingChoiceScene (ActionEvent event) throws IOException {
+	 Parent root = FXMLLoader.load(getClass().getResource("ClothingChoiceView.fxml"));
+	 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+	 scene = new Scene(root);
+	 stage.setScene(scene);
+	 stage.show();
+ }
 }
