@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SceneController">
+   <children>
+      <BorderPane prefHeight="100.0" prefWidth="800.0">
+         <center>
+            <Label alignment="CENTER" prefHeight="70.0" prefWidth="331.0" text="Outfit Creator" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="48.0" />
+               </font>
+            </Label>
+         </center>
+         <bottom>
+            <Label alignment="CENTER" text="Input the current weather to find your ideal outfit!" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </bottom>
+      </BorderPane>
+      <GridPane prefHeight="81.0" prefWidth="800.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="281.0" text="Select Temperature Measurement :" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="30.0" prefWidth="191.0" text="Input Today's Weather :" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField maxWidth="168.0" prefHeight="33.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></TextField>
+            <MenuButton mnemonicParsing="false" prefHeight="33.0" prefWidth="168.0" GridPane.columnIndex="1">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Celsius" />
+                <MenuItem mnemonicParsing="false" text="Farenheit" />
+              </items>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </MenuButton>
+         </children>
+      </GridPane>
+      <BorderPane prefHeight="55.0" prefWidth="800.0">
+         <left>
+            <Button mnemonicParsing="false" onAction="#switchToHomeScene" prefHeight="40.0" prefWidth="166.0" text="Return to Home Screen" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </left>
+         <right>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="168.0" text="Get Outfit" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets right="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </right>
+      </BorderPane>
+   </children>
+</VBox>
