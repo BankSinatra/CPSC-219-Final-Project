@@ -2,8 +2,10 @@ package application;
 
 public enum LaundryMethod {
     WASHING,
-    DRYING,
+    TUMBLE_DRYING,
+    NATURAL_DRYING,
     IRONING,
-    PROFESSIONAL_CLEANING,
+    DRY_CLEANING,
+    WET_CLEANING,
     BLEACHING
 }
