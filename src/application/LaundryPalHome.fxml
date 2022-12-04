@@ -12,7 +12,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LaundryPalHomeController">
    <children>
-   <Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <Accordion maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
      <panes>
        <TitledPane animated="false" text="Washing">
             <content>
@@ -35,7 +35,10 @@
                   <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tumble Drying" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tumble Drying">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Text>
                               <HBox fx:id="tumble_drying">
                                  <children>
                                  <Button fx:id="btn_tumble_dry" mnemonicParsing="false" text="Button" />
@@ -44,7 +47,10 @@
                                  <Button fx:id="btn_do_not_tumble_dry" mnemonicParsing="false" text="Button" />
                                  </children>
                               </HBox>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Natural Drying" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Natural Drying">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Text>
                               <HBox fx:id="natural_drying" layoutX="10.0" layoutY="26.0">
                                  <children>
                                     <Button fx:id="btn_dry" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
@@ -82,7 +88,10 @@
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dry Cleaning" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dry Cleaning">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Text>
                               <HBox fx:id="dry_cleaning" minWidth="-Infinity">
                                  <children>
                                     <Button fx:id="btn_pro_cleaning" mnemonicParsing="false" text="Button" />
@@ -95,7 +104,10 @@
                                     <Button fx:id="btn_no_chemical_clean" layoutX="166.0" layoutY="10.0" mnemonicParsing="false" text="Button" />
                                  </children>
                               </HBox>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wet Cleaning" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wet Cleaning">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Text>
                               <HBox fx:id="wet_cleaning" layoutX="10.0" layoutY="26.0" minWidth="-Infinity">
                                  <children>
                                     <Button fx:id="btn_wet_clean" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
@@ -124,7 +136,7 @@
          </TitledPane>
      </panes>
    </Accordion>
-      <VBox fx:id="results_pane" prefHeight="200.0" prefWidth="100.0" />
+      <VBox fx:id="results_pane" prefWidth="100.0" />
       <BorderPane prefHeight="50.0" prefWidth="200.0">
          <left>
             <Button fx:id="btn_return_to_home" mnemonicParsing="false" onAction="#switchToHomeScene" text="Return to Home Screen" BorderPane.alignment="CENTER">
@@ -137,7 +149,7 @@
             </Button>
          </left>
          <right>
-            <Button fx:id="btn_get_laundry_instructions" mnemonicParsing="false" text="Get Laundry Istructions" BorderPane.alignment="CENTER">
+            <Button fx:id="btn_get_laundry_instructions" mnemonicParsing="false" onAction="#calculateLaundry" text="Get Laundry Istructions" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets right="10.0" />
                </BorderPane.margin>

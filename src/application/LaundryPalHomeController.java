@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Locale;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,10 +16,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class LaundryPalHomeController {
@@ -152,7 +158,7 @@ public class LaundryPalHomeController {
 		@FXML
 		public Button btn_get_laundry_instructions;
 
-		private final ArrayList<Laundry> iconList = new ArrayList<Laundry>();
+		private final ArrayList<Laundry> iconList = new ArrayList<>();
 
 		public void switchToHomeScene (ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("HomeScreenView.fxml"));
@@ -207,7 +213,38 @@ public class LaundryPalHomeController {
 			});
 	    }
 
-		private void calculateLaundry(){
+		@FXML
+		public void calculateLaundry(){
+			//Create the layout and inject it into the vbox pane
+			results_pane.getChildren().clear();
+
+			Comparator<Laundry> laundryComparator = new Comparator<Laundry>() {
+				@Override
+				public int compare(Laundry o1, Laundry o2) {
+						LaundryMethod a = o1.getLaundryMethod();
+						LaundryMethod b = o2.getLaundryMethod();
+						return a.compareTo(b);
+				}
+
+			};
+			iconList.sort(laundryComparator);
+
+			if(iconList.size() > 0){
+				for (Laundry laundry : iconList){
+					String headingText = laundry.getLaundryMethod().toString().toLowerCase(Locale.ROOT);
+					Label heading = new Label(headingText);
+					heading.setFont(new Font("System", 22));
+
+					String subTitleText = laundry.getInstructions();
+					Label subTitle = new Label(subTitleText);
+					results_pane.getChildren().add(heading);
+					results_pane.getChildren().add(subTitle);
+				}
+			}else{
+				Label noIconsSelected = new Label("Please select an icon to have laundry instructions show up");
+				noIconsSelected.setFont(new Font("System", 22));
+				results_pane.getChildren().add(noIconsSelected);
+			}
 
 		}
 	    
