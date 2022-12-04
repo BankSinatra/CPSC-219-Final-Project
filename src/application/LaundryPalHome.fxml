@@ -149,7 +149,7 @@
             </Button>
          </left>
          <right>
-            <Button fx:id="btn_get_laundry_instructions" mnemonicParsing="false" onAction="#calculateLaundry" text="Get Laundry Istructions" BorderPane.alignment="CENTER">
+            <Button fx:id="btn_get_laundry_instructions" mnemonicParsing="false" onAction="#calculateLaundry" text="Get Laundry Instructions" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets right="10.0" />
                </BorderPane.margin>
