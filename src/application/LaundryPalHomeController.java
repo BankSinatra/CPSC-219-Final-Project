@@ -16,11 +16,12 @@ import javafx.scene.control.ContentDisplay;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class LaundryPalHomeController {
 
-		Stage applicationStage;
+	Stage applicationStage;
 	
 		@FXML
 		private Button btn_wash;
@@ -112,8 +113,6 @@ public class LaundryPalHomeController {
 	    @FXML
 	    private Button btn_bleach_cl;
 
-
-
 	    @FXML
 	    private Button btn_iron;
 
@@ -146,6 +145,12 @@ public class LaundryPalHomeController {
 
 		@FXML
 		public Button btn_return_to_home;
+
+		@FXML
+		public VBox results_pane;
+
+		@FXML
+		public Button btn_get_laundry_instructions;
 
 		private final ArrayList<Laundry> iconList = new ArrayList<Laundry>();
 
