@@ -213,6 +213,24 @@ public class LaundryPalHomeController {
 			});
 	    }
 
+		//Helper function to format the enum name to a neater name
+		private String formatEnum(String string){
+			StringBuilder stringBuilder = new StringBuilder();
+			char[] s = string.toCharArray();
+			for (int i = 0; i < string.length(); i++){
+				if(i == 0){
+					stringBuilder.append(Character.toUpperCase(s[i]));
+				}else if(s[i] == '_'){
+					stringBuilder.append(" ");
+				}else if(s[i-1] == '_'){
+					stringBuilder.append(Character.toUpperCase(s[i]));
+				}else{
+					stringBuilder.append(s[i]);
+				}
+			}
+			return stringBuilder.toString();
+		}
+
 		@FXML
 		public void calculateLaundry(){
 			//Create the layout and inject it into the vbox pane
@@ -231,7 +249,7 @@ public class LaundryPalHomeController {
 
 			if(iconList.size() > 0){
 				for (Laundry laundry : iconList){
-					String headingText = laundry.getLaundryMethod().toString().toLowerCase(Locale.ROOT);
+					String headingText = formatEnum(laundry.getLaundryMethod().toString().toLowerCase(Locale.ROOT));
 					Label heading = new Label(headingText);
 					heading.setFont(new Font("System", 22));
 
