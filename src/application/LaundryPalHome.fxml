@@ -16,7 +16,7 @@
      <panes>
        <TitledPane animated="false" text="Washing">
             <content>
-               <HBox maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0">
+               <HBox fx:id="washing" maxHeight="1.7976931348623157E308" minWidth="-Infinity" prefHeight="100.0" prefWidth="200.0">
                   <children>
                      <Button fx:id="btn_wash" mnemonicParsing="false" text="Button" />
                      <Button fx:id="btn_wash_30" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" text="Button" />
@@ -36,7 +36,7 @@
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tumble Drying" />
-                              <HBox>
+                              <HBox fx:id="tumble_drying">
                                  <children>
                                  <Button fx:id="btn_tumble_dry" mnemonicParsing="false" text="Button" />
                                  <Button fx:id="btn_tumble_dry_low" mnemonicParsing="false" text="Button" />
@@ -45,7 +45,7 @@
                                  </children>
                               </HBox>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Natural Drying" />
-                              <HBox layoutX="10.0" layoutY="26.0">
+                              <HBox fx:id="natural_drying" layoutX="10.0" layoutY="26.0">
                                  <children>
                                     <Button fx:id="btn_dry" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
                                     <Button fx:id="btn_line_dry" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
@@ -65,7 +65,7 @@
          </TitledPane>
          <TitledPane animated="false" layoutX="10.0" layoutY="35.0" text="Ironing">
             <content>
-               <HBox prefHeight="100.0" prefWidth="200.0">
+               <HBox fx:id="ironing" prefHeight="100.0" prefWidth="200.0">
                   <children>
                      <Button fx:id="btn_iron" mnemonicParsing="false" text="Button" />
                      <Button fx:id="btn_iron_low" mnemonicParsing="false" text="Button" />
@@ -83,7 +83,7 @@
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dry Cleaning" />
-                              <HBox minWidth="-Infinity">
+                              <HBox fx:id="dry_cleaning" minWidth="-Infinity">
                                  <children>
                                     <Button fx:id="btn_pro_cleaning" mnemonicParsing="false" text="Button" />
                                     <Button fx:id="btn_hcs_only" mnemonicParsing="false" text="Button" />
@@ -96,7 +96,7 @@
                                  </children>
                               </HBox>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wet Cleaning" />
-                              <HBox layoutX="10.0" layoutY="26.0" minWidth="-Infinity">
+                              <HBox fx:id="wet_cleaning" layoutX="10.0" layoutY="26.0" minWidth="-Infinity">
                                  <children>
                                     <Button fx:id="btn_wet_clean" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
                                     <Button fx:id="btn_wet_clean_gentle" minWidth="-Infinity" mnemonicParsing="false" text="Button" />
@@ -112,7 +112,7 @@
             </TitledPane>
          <TitledPane animated="false" layoutX="10.0" layoutY="85.0" prefHeight="211.0" prefWidth="600.0" text="Bleaching">
             <content>
-               <HBox prefHeight="100.0" prefWidth="200.0">
+               <HBox fx:id="bleaching" prefHeight="100.0" prefWidth="200.0">
                   <children>
                      <Button fx:id="btn_bleach" mnemonicParsing="false" text="Button" />
                      <Button fx:id="btn_bleach_cl" mnemonicParsing="false" text="Button" />
