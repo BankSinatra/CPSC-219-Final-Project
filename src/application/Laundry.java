@@ -1,26 +1,26 @@
 package application;
 
-import java.util.ArrayList;
+public class Laundry {
+    private final String instructions;
 
-public abstract class Laundry {
-    private LaundryMethod laundryMethod;
-    private String instructions;
-
-    Laundry(LaundryMethod laundryMethod){
-        this.laundryMethod = laundryMethod;
+    Laundry(String group, String instructions) throws Exception {
+        LaundryMethod laundryMethod = getLaundryMethod(group);
+        this.instructions = instructions;
     }
 
-    public LaundryMethod getLaundryMethod() {
-        return laundryMethod;
-    }
-    public void setLaundryMethod(LaundryMethod laundryMethod){
-        this.laundryMethod = laundryMethod;
+    public LaundryMethod getLaundryMethod(String group) throws Exception {
+        return switch (group) {
+            case "washing" -> LaundryMethod.WASHING;
+            case "tumble_drying" -> LaundryMethod.TUMBLE_DRYING;
+            case "natural_drying" -> LaundryMethod.NATURAL_DRYING;
+            case "ironing" -> LaundryMethod.IRONING;
+            case "dry_cleaning" -> LaundryMethod.DRY_CLEANING;
+            case "wet_cleaning" -> LaundryMethod.WET_CLEANING;
+            case "bleaching" -> LaundryMethod.BLEACHING;
+            default -> throw new Exception("Something went wrong");
+        };
     }
     public String getInstructions(){
         return instructions;
-    }
-
-    public void setInstructions(String instructions){
-        this.instructions = instructions;
     }
 }
