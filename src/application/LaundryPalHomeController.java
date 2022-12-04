@@ -147,7 +147,7 @@ public class LaundryPalHomeController {
 		@FXML
 		public Button btn_return_to_home;
 
-		private ArrayList<Laundry> iconList = new ArrayList<Laundry>();
+		private final ArrayList<Laundry> iconList = new ArrayList<Laundry>();
 
 		public void switchToHomeScene (ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("HomeScreenView.fxml"));
@@ -166,15 +166,29 @@ public class LaundryPalHomeController {
 	        imageView.setFitHeight(50);
 	        btn.setGraphic(imageView);
 	        btn.setContentDisplay(ContentDisplay.GRAPHIC_ONLY);
+			btn.setStyle("-fx-background-color: white");
 			btn.setOnAction(event -> {
-				Object node = event.getSource(); //returns the object that generated the event
-				if (node instanceof Button) {
-					Button b = (Button)node;
-					if(b.getParent() instanceof HBox) {
-						HBox parent = (HBox) b.getParent();
+				Object node = event.getSource();
+				if (node instanceof Button b) {
+					if(b.getParent() instanceof HBox parent) {
+						try {
+							//There can only be one laundry method present ever
+							Laundry la = new Laundry(parent.getId(), instructions);
+							for(Laundry l : iconList){
+								if (l.getLaundryMethod() == la.getLaundryMethod()){
+									iconList.remove(l);
+									break;
+								}
+							}
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
 						for(Node child : parent.getChildren()){
 							if(!child.equals(b)){
-								//Disable
+								child.setStyle("-fx-background-color: white");
+							}else{
+								//Select the button
+								child.setStyle("-fx-background-color: white;"+"-fx-border-color: blue;" );
 							}
 						}
 						try {
@@ -188,7 +202,7 @@ public class LaundryPalHomeController {
 			});
 	    }
 
-		private void iconPress(){
+		private void calculateLaundry(){
 
 		}
 	    
