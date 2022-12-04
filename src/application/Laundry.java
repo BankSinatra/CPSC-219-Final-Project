@@ -2,13 +2,14 @@ package application;
 
 public class Laundry {
     private final String instructions;
+    private LaundryMethod laundryMethod;
 
     Laundry(String group, String instructions) throws Exception {
-        LaundryMethod laundryMethod = getLaundryMethod(group);
+        this.laundryMethod = getLaundryMethod(group);
         this.instructions = instructions;
     }
 
-    public LaundryMethod getLaundryMethod(String group) throws Exception {
+    private LaundryMethod getLaundryMethod(String group) throws Exception {
         return switch (group) {
             case "washing" -> LaundryMethod.WASHING;
             case "tumble_drying" -> LaundryMethod.TUMBLE_DRYING;
@@ -20,6 +21,11 @@ public class Laundry {
             default -> throw new Exception("Something went wrong");
         };
     }
+
+    public LaundryMethod getLaundryMethod(){
+        return laundryMethod;
+    }
+
     public String getInstructions(){
         return instructions;
     }
