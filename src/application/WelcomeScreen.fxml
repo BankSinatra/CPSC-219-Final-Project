@@ -43,7 +43,7 @@
          <children>
             <Button mnemonicParsing="false" onAction="#switchToHomeScene" prefHeight="72.0" prefWidth="112.0" text="Continue" />
          </children></HBox>
-      <Button mnemonicParsing="false" onAction="#switchToScene2" text="Switch to settings">
+      <Button mnemonicParsing="false" text="Switch to settings">
          <VBox.margin>
             <Insets left="20.0" />
          </VBox.margin></Button>
