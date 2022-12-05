@@ -40,8 +40,8 @@
             <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1">
             <items>
             <FXCollections fx:factory="observableArrayList">
-            	<String fx:value="US" />
-            	<String fx:value="EU" />
+            	<String fx:value="Centimeters" />
+            	<String fx:value="Inches" />
             </FXCollections>
             </items>
             </ChoiceBox>
