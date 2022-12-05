@@ -1,46 +1,58 @@
 package application;
 
 public class Settings {
-	private BodyMeasurements;
+	private BodyMeasurements bodymeasurement;
 	
 	private double unitmeasurement;
 	
 	boolean man = true;
 	
-	//private double waist;
-	//private double cm;
-	//private double circumference;
-	//private double shoe;
-	//(inch, SEX, BODYMEASUREMENT should be constructor layout)
+
 	
-	public Settings(Settings toCopy) {
-		unitmeasurement = toCopy.unitmeasurement;
-		BodyMeasurements = toCopy.BodyMeasurements;
-		man = toCopy.man;
-	}
+
 	
-	public Settings(double unitmeasure,boolean trueifmale,double bodymeasurements) {
-		unitmeasurement = unitmeasure;
-		BodyMeasurements = bodymeasurements;
+	public Settings(double unitmeasure,boolean trueifmale,BodyMeasurements body) {
+		setUnitmeasurement(unitmeasure);
+		setBodymeasurement(body);
 		man = trueifmale;
 		
 		
 	}
 	
 	
-	public String toString() {
-		return ("Waist measurement:" + getWaist() ) + ("foot length:" + getfootLength()) +
-				("Head Circumference:" + getheadCircumference()) +
-				("inseam:" + getnseam());
+	//public String toString() {
+		//return ("Waist measurement:" + getWaist() ) + ("foot length:" + getfootLength()) +
+				//("Head Circumference:" + getheadCircumference()) +
+				//("inseam:" + getinseam());
 		        
-	}
+	//}
 	
 	
 	void converttocm(double inch) {
-		unitmeasurement = inch*2.54;
+		setUnitmeasurement(inch*2.54);
 	}
 	void converttoinches(double centimetres) {
-		unitmeasurement = centimetres/2.54;
+		setUnitmeasurement(centimetres/2.54);
+	}
+
+
+	public BodyMeasurements getBodymeasurement() {
+		return bodymeasurement;
+	}
+
+
+	public void setBodymeasurement(BodyMeasurements bodymeasurement) {
+		this.bodymeasurement = bodymeasurement;
+	}
+
+
+	public double getUnitmeasurement() {
+		return unitmeasurement;
+	}
+
+
+	public void setUnitmeasurement(double unitmeasurement) {
+		this.unitmeasurement = unitmeasurement;
 	}
 }
 	
@@ -134,3 +146,4 @@ public class Settings {
 	}
 	
 }
+*/
