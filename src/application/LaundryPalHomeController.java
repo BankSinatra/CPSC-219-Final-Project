@@ -26,8 +26,6 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class LaundryPalHomeController {
-
-	Stage applicationStage;
 	
 		@FXML
 		private Button btn_wash;
