@@ -5,14 +5,26 @@ import java.util.Locale;
 public class Settings {
 	private BodyMeasurements measurements;
 	private MeasureUnit measurementUnit;
-	boolean male;
-	boolean welcome;
+	private boolean male;
+	private boolean welcome;
 
 	public Settings(MeasureUnit unitMeasure, boolean male, BodyMeasurements body, boolean welcome) {
-		setUnitmeasurement(unitMeasure);
+		setUnitMeasurement(unitMeasure);
 		setMeasurements(body);
-		this.male = male;
-		this.welcome = welcome;
+		this.setMale(male);
+		this.setWelcome(welcome);
+	}
+
+	Settings(boolean male, boolean welcome){
+		this.setWelcome(welcome);
+		this.setMale(male);
+	}
+
+	Settings(){
+		this.setWelcome(true);
+		this.setUnitMeasurement(MeasureUnit.CM);
+		this.setMeasurements(new BodyMeasurements());
+		this.setMale(true);
 	}
 
 
@@ -25,13 +37,30 @@ public class Settings {
 	}
 
 
-	public String getUnitmeasurement() {
+	public String getUnitMeasurement() {
 		return measurementUnit.toString().toLowerCase(Locale.ROOT);
 	}
 
 
-	public void setUnitmeasurement(MeasureUnit unitmeasurement) {
+	public void setUnitMeasurement(MeasureUnit unitmeasurement) {
 		this.measurementUnit = unitmeasurement;
+	}
+
+	public boolean isMale() {
+		return male;
+	}
+
+	public void setMale(boolean male) {
+		this.male = male;
+		this.setWelcome(false);
+	}
+
+	public boolean isWelcome() {
+		return welcome;
+	}
+
+	public void setWelcome(boolean welcome) {
+		this.welcome = welcome;
 	}
 }
 	

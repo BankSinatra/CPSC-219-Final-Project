@@ -10,13 +10,15 @@ public class BodyMeasurements {
 	private double hips; //Women's tops, Jacket, Sweaters
 
 
-	BodyMeasurements(double headCircumference, double footLength, double waist, double bust, double chest, double hips) {
+	BodyMeasurements(double headCircumference, double footLength, double bust, double waist,  double chest, double hips) {
 		setHeadCircumference(headCircumference);
 		setFootLength(footLength);
 		setWaist(waist);
 		setBust(bust);
 		setChest(chest);
 		setHips(hips);
+	}
+	BodyMeasurements() {
 	}
 
 	BodyMeasurements(BodyMeasurements bodyMeasurements){
