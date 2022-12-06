@@ -16,21 +16,18 @@ public class Main extends Application {
 			if (welcome){
 				FXMLLoader loader = new FXMLLoader();
 				VBox root = loader.load(new FileInputStream("src/application/WelcomeScreen.fxml"));
-				Scene scene = new Scene(root,600,600);
+				Scene scene = new Scene(root);
 				primaryStage.setScene(scene);
 				primaryStage.setTitle("Welcome Screen");
 				primaryStage.show();
 			}else{
 				FXMLLoader loader = new FXMLLoader();
 				VBox root = loader.load(new FileInputStream("src/application/HomeScreenView.fxml"));
-				Scene scene = new Scene(root,600,600);
+				Scene scene = new Scene(root);
 				primaryStage.setScene(scene);
 				primaryStage.setTitle("Home Screen");
 				primaryStage.show();
 			}
-
-
-
 
 		} catch(Exception e) {
 			e.printStackTrace();
