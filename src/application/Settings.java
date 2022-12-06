@@ -9,7 +9,7 @@ public class Settings {
 	private boolean welcome;
 
 	public Settings(MeasureUnit unitMeasure, boolean male, BodyMeasurements body, boolean welcome) {
-		setUnitmeasurement(unitMeasure);
+		setUnitMeasurement(unitMeasure);
 		setMeasurements(body);
 		this.setMale(male);
 		this.setWelcome(welcome);
@@ -21,7 +21,10 @@ public class Settings {
 	}
 
 	Settings(){
-		this.setWelcome(false);
+		this.setWelcome(true);
+		this.setUnitMeasurement(MeasureUnit.CM);
+		this.setMeasurements(new BodyMeasurements());
+		this.setMale(true);
 	}
 
 
@@ -34,12 +37,12 @@ public class Settings {
 	}
 
 
-	public String getUnitmeasurement() {
+	public String getUnitMeasurement() {
 		return measurementUnit.toString().toLowerCase(Locale.ROOT);
 	}
 
 
-	public void setUnitmeasurement(MeasureUnit unitmeasurement) {
+	public void setUnitMeasurement(MeasureUnit unitmeasurement) {
 		this.measurementUnit = unitmeasurement;
 	}
 
@@ -49,6 +52,7 @@ public class Settings {
 
 	public void setMale(boolean male) {
 		this.male = male;
+		this.setWelcome(false);
 	}
 
 	public boolean isWelcome() {
