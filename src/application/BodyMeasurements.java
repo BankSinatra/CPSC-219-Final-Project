@@ -1,16 +1,20 @@
 package application;
 
 public class BodyMeasurements {
-	
-	private double headCircumference = 0;
-	private double footLength = 0;
-	private double waist = 0;
-	private double inseam = 0;
-	boolean man = true;
+	//These sizes are based on the sizes used on ASOS: https://www.asos.com/us/discover/size-charts/
+	private double headCircumference; //Hats
+	private double footLength; //Shoes
+	private double bust; //Women's tops, Jacket, Sweaters
+	private double waist; //Bottoms, Women's tops, Jacket, Sweaters
+	private double chest; //t-shirt and sweater
+	private double hips; //Women's tops, Jacket, Sweaters
 
 
-	public BodyMeasurements() {
-		// TODO Auto-generated constructor stub
+	public BodyMeasurements(double headCircumference, double footLength, double waist, double inseam, double bust) {
+		setHeadCircumference(headCircumference);
+		setFootLength(footLength);
+		setWaist(waist);
+		setBust(bust);
 	}
 	
 	// need measurements for: US SIZING
@@ -21,9 +25,7 @@ public class BodyMeasurements {
 	}
 
 	void setHeadCircumference(double headCircumference) {
-		if (headCircumference <= 65 && headCircumference >= 54){
 			this.headCircumference = headCircumference;
-		}
 	}
 
 	// shoes - need foot length. mens: size 6-12 range: 23.5cm - 28.6cm
@@ -33,14 +35,7 @@ public class BodyMeasurements {
 	}
 
 	void setFootLength(double footLength) {
-		if (man = true && footLength >= 23.5 && footLength <= 28.6) {
 		this.footLength = footLength;
-		}
-		
-		else if (man = false && footLength >= 20.8 && footLength <= 25.9) {
-			this.footLength = footLength;
-		}
-		
 	}
 	
 	// bottoms waist and inseam. mens: xsmall: 76 - 80 small: 80-84  medium: 84-88 large: 88-93 xlarge: 93-98cm
@@ -53,33 +48,30 @@ public class BodyMeasurements {
 	}
 
 	void setWaist(double waist) {
-		if (man = true && waist >= 76 && waist <= 98) {
-			this.waist = waist;
-		}
-		
-		else if (man = false && waist >= 64 && waist <= 86) {
-			this.waist = waist;
-		}
+		this.waist = waist;
 	}
 
-	double getInseam() {
-		return inseam;
+	public double getChest() {
+		return chest;
 	}
 
-	void setInseam(double inseam) {
-		if (man = true && inseam >= 76 && inseam <= 88) {
-			this.inseam = inseam;
-		}
-		if (man = false && inseam >= 74 && inseam <= 86) {
-			this.inseam = inseam;
-		}
-	}	
-	
-	// sweaters
-	// jacket
-	// tops - chest, waist
-	
-	
-	
+	public void setChest(double chest) {
+		this.chest = chest;
+	}
 
+	public double getHips() {
+		return hips;
+	}
+
+	public void setHips(double hips) {
+		this.hips = hips;
+	}
+
+	public double getBust() {
+		return bust;
+	}
+
+	public void setBust(double bust) {
+		this.bust = bust;
+	}
 }
