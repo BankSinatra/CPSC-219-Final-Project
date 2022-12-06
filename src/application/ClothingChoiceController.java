@@ -12,8 +12,10 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class ClothingChoiceController {
-	@FXML
-	private Button shoesButton;
+	boolean tops = false;
+	boolean bottoms = false;
+	boolean hats = false;
+	boolean shoes = false;
 
     @FXML
     public void switchToHomeScene (ActionEvent event) throws IOException {
@@ -26,27 +28,31 @@ public class ClothingChoiceController {
     
     @FXML
     void calculateHatSize(ActionEvent event) {
-    	System.out.println("HATSSS");
     	boolean hats = true;
     	
     }
     
     @FXML
     void calculateShoeSize (ActionEvent event) {
-    	System.out.println("SHOEEES");
+    	boolean shoes = true;
     	
     }
     
     @FXML
     void calculateTopsSize (ActionEvent event) {
-    	System.out.println("TOPSSS");
+    	boolean tops = true;
     	
     }
     
     @FXML 
     void calculateBottomsSize (ActionEvent event) {
-    	System.out.println("BOTTOMSS");
+    	boolean bottoms = true;
     	
+    }
+    
+    @FXML
+    void calculateSize (ActionEvent event) {
+    	System.out.println("get size button clicked");
     }
 
 }

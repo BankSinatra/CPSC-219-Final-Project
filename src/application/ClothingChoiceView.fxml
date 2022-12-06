@@ -109,6 +109,16 @@
                </BorderPane.margin>
             </Button>
          </left>
+         <right>
+            <Button mnemonicParsing="false" onAction = "#calculateSize" prefHeight="44.0" prefWidth="204.0" text="Get Size" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </right>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
       </BorderPane>
    </children>
 </VBox>
