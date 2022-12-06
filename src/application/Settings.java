@@ -1,58 +1,38 @@
 package application;
 
+import java.util.Locale;
+
 public class Settings {
-	private BodyMeasurements bodymeasurement;
-	
-	private double unitmeasurement;
-	
-	boolean man = true;
-	
+	private BodyMeasurements measurements;
+	private MeasureUnit measurementUnit;
+	boolean male;
+	boolean welcome;
 
-	
-
-	
-	public Settings(double unitmeasure,boolean trueifmale,BodyMeasurements body) {
+	public Settings(MeasureUnit unitmeasure, boolean male, BodyMeasurements body, boolean welcome) {
 		setUnitmeasurement(unitmeasure);
-		setBodymeasurement(body);
-		man = trueifmale;
-		
-		
-	}
-	
-	
-	//public String toString() {
-		//return ("Waist measurement:" + getWaist() ) + ("foot length:" + getfootLength()) +
-				//("Head Circumference:" + getheadCircumference()) +
-				//("inseam:" + getinseam());
-		        
-	//}
-	
-	
-	void converttocm(double inch) {
-		setUnitmeasurement(inch*2.54);
-	}
-	void converttoinches(double centimetres) {
-		setUnitmeasurement(centimetres/2.54);
+		setMeasurements(body);
+		this.male = male;
+		this.welcome = welcome;
 	}
 
 
-	public BodyMeasurements getBodymeasurement() {
-		return bodymeasurement;
+	public BodyMeasurements getMeasurements() {
+		return measurements;
 	}
 
 
-	public void setBodymeasurement(BodyMeasurements bodymeasurement) {
-		this.bodymeasurement = bodymeasurement;
+	public void setMeasurements(BodyMeasurements measurements) {
+		this.measurements = measurements;
 	}
 
 
-	public double getUnitmeasurement() {
-		return unitmeasurement;
+	public String getUnitmeasurement() {
+		return measurementUnit.toString().toLowerCase(Locale.ROOT);
 	}
 
 
-	public void setUnitmeasurement(double unitmeasurement) {
-		this.unitmeasurement = unitmeasurement;
+	public void setUnitmeasurement(MeasureUnit unitmeasurement) {
+		this.measurementUnit = unitmeasurement;
 	}
 }
 	
