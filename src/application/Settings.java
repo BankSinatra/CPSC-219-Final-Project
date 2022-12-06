@@ -5,14 +5,23 @@ import java.util.Locale;
 public class Settings {
 	private BodyMeasurements measurements;
 	private MeasureUnit measurementUnit;
-	boolean male;
-	boolean welcome;
+	private boolean male;
+	private boolean welcome;
 
 	public Settings(MeasureUnit unitMeasure, boolean male, BodyMeasurements body, boolean welcome) {
 		setUnitmeasurement(unitMeasure);
 		setMeasurements(body);
-		this.male = male;
-		this.welcome = welcome;
+		this.setMale(male);
+		this.setWelcome(welcome);
+	}
+
+	Settings(boolean male, boolean welcome){
+		this.setWelcome(welcome);
+		this.setMale(male);
+	}
+
+	Settings(){
+		this.setWelcome(false);
 	}
 
 
@@ -32,6 +41,22 @@ public class Settings {
 
 	public void setUnitmeasurement(MeasureUnit unitmeasurement) {
 		this.measurementUnit = unitmeasurement;
+	}
+
+	public boolean isMale() {
+		return male;
+	}
+
+	public void setMale(boolean male) {
+		this.male = male;
+	}
+
+	public boolean isWelcome() {
+		return welcome;
+	}
+
+	public void setWelcome(boolean welcome) {
+		this.welcome = welcome;
 	}
 }
 	
