@@ -8,8 +8,8 @@ public class Settings {
 	boolean male;
 	boolean welcome;
 
-	public Settings(MeasureUnit unitmeasure, boolean male, BodyMeasurements body, boolean welcome) {
-		setUnitmeasurement(unitmeasure);
+	public Settings(MeasureUnit unitMeasure, boolean male, BodyMeasurements body, boolean welcome) {
+		setUnitmeasurement(unitMeasure);
 		setMeasurements(body);
 		this.male = male;
 		this.welcome = welcome;
@@ -17,9 +17,8 @@ public class Settings {
 
 
 	public BodyMeasurements getMeasurements() {
-		return measurements;
+		return new BodyMeasurements(measurements);
 	}
-
 
 	public void setMeasurements(BodyMeasurements measurements) {
 		this.measurements = measurements;
