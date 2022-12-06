@@ -4,26 +4,23 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class ClothingChoiceController {
-	boolean tops = false;
+
+    boolean tops = false;
 	boolean bottoms = false;
 	boolean hats = false;
 	boolean shoes = false;
 
     @FXML
+    private Button btn_hat_size;
+
+    @FXML
     public void switchToHomeScene (ActionEvent event) throws IOException {
-   	 Parent root = FXMLLoader.load(getClass().getResource("HomeScreenView.fxml"));
-   	 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-   	 Scene scene = new Scene(root);
-   	 stage.setScene(scene);
-   	 stage.show();
+        Stage stage = (Stage) btn_hat_size.getScene().getWindow();
+        stage.close();
     }
     
     @FXML
