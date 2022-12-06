@@ -10,11 +10,22 @@ public class BodyMeasurements {
 	private double hips; //Women's tops, Jacket, Sweaters
 
 
-	public BodyMeasurements(double headCircumference, double footLength, double waist, double inseam, double bust) {
+	BodyMeasurements(double headCircumference, double footLength, double waist, double bust, double chest, double hips) {
 		setHeadCircumference(headCircumference);
 		setFootLength(footLength);
 		setWaist(waist);
 		setBust(bust);
+		setChest(chest);
+		setHips(hips);
+	}
+
+	BodyMeasurements(BodyMeasurements bodyMeasurements){
+		this.headCircumference = bodyMeasurements.getHeadCircumference();
+		this.footLength = bodyMeasurements.getHeadCircumference();
+		this.bust = bodyMeasurements.getBust();
+		this.waist = bodyMeasurements.getWaist();
+		this.chest = bodyMeasurements.getChest();
+		this.hips = bodyMeasurements.getHips();
 	}
 	
 	// need measurements for: US SIZING
