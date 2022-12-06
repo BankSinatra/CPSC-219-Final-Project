@@ -1,6 +1,7 @@
 package application;
 
 import java.io.*;
+import java.util.Objects;
 import java.util.Properties;
 
 import javafx.application.Application;
@@ -62,22 +63,26 @@ public class Main extends Application {
 		File myObj = new File("settings.properties");
 		try {
 			if (myObj.createNewFile()) {
-				//File created. Let's populate it
-				System.out.println("File created");
+				//Brand new file created!
 				return new Settings();
 			} else {
 				//File exist already. Read from it
 				Properties settings = new Properties();
 				settings.load(new FileInputStream("settings.properties"));
-
 				BodyMeasurements bodyMeasurements = measureSetup(settings);
-				System.out.println(settings.getProperty("settings.welcome"));
-				System.out.println(settings.getProperty("settings.male"));
+				boolean welcome = Boolean.parseBoolean(settings.getProperty("settings.welcome"));
+				boolean male = Boolean.parseBoolean(settings.getProperty("settings.male"));
+				MeasureUnit measureUnit;
+				if (settings.getProperty("settings.male").equals("cm") ){
+					measureUnit = MeasureUnit.CM;
+				}else{
+					measureUnit = MeasureUnit.INCHES;
+				}
+				return new Settings(measureUnit, male, bodyMeasurements, welcome);
 			}
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException ignored) {
+			System.out.println("Something bad happened");
 		}
-
 		return new Settings();
 	}
 
