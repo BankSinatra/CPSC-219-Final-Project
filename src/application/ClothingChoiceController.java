@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +17,14 @@ public class ClothingChoiceController {
 
     @FXML
     private Button btn_hat_size;
+    @FXML
+    private Button btn_bottom_size;
+    @FXML
+    private Button btn_jacket_size;
+    @FXML
+    private Button btn_sweater_size;
+    @FXML
+    private Button btn_shoe_size;
 
     @FXML
     public void switchToHomeScene (ActionEvent event) throws IOException {
@@ -26,25 +35,21 @@ public class ClothingChoiceController {
     @FXML
     void calculateHatSize(ActionEvent event) {
     	boolean hats = true;
-    	
     }
     
     @FXML
     void calculateShoeSize (ActionEvent event) {
     	boolean shoes = true;
-    	
     }
     
     @FXML
     void calculateTopsSize (ActionEvent event) {
     	boolean tops = true;
-    	
     }
     
     @FXML 
     void calculateBottomsSize (ActionEvent event) {
     	boolean bottoms = true;
-    	
     }
     
     @FXML
