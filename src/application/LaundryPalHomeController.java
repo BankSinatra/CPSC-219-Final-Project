@@ -1,29 +1,23 @@
 package application;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Locale;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Locale;
 
 public class LaundryPalHomeController {
 	
@@ -158,12 +152,9 @@ public class LaundryPalHomeController {
 
 		private final ArrayList<Laundry> iconList = new ArrayList<>();
 
-		public void switchToHomeScene (ActionEvent event) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("HomeScreenView.fxml"));
-			Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-		Scene scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
+		public void switchToHomeScene (ActionEvent event) {
+			Stage stage = (Stage) results_pane.getScene().getWindow();
+			stage.close();
 		}
     
 	    private void bindImage(String location, Button btn, String instructions) throws FileNotFoundException {
