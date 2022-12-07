@@ -1,7 +1,6 @@
 package application;
 
 import java.io.*;
-import java.util.Objects;
 import java.util.Properties;
 
 import javafx.application.Application;
@@ -12,27 +11,27 @@ import javafx.scene.layout.VBox;
 
 
 public class Main extends Application {
-	Settings settings = settingsSetup();
+	SettingsHolder settingsHolder = SettingsHolder.getInstance();
 	@Override
 	public void start(Stage primaryStage) {
-		boolean welcome = settings.isWelcome();
+		settingsHolder.setSettings(settingsSetup());
+		boolean welcome = settingsHolder.getSettings().isWelcome();
 		try {
+			FXMLLoader loader = new FXMLLoader();
+			VBox root;
 			if (welcome){
-				FXMLLoader loader = new FXMLLoader();
-				VBox root = loader.load(new FileInputStream("src/application/WelcomeScreen.fxml"));
+				root = loader.load(new FileInputStream("src/application/WelcomeScreen.fxml"));
 				Scene scene = new Scene(root);
 				primaryStage.setScene(scene);
 				primaryStage.setTitle("Welcome Screen");
-				primaryStage.show();
 			}else{
-				FXMLLoader loader = new FXMLLoader();
-				VBox root = loader.load(new FileInputStream("src/application/HomeScreenView.fxml"));
+				root = loader.load(new FileInputStream("src/application/HomeScreenView.fxml"));
 				Scene scene = new Scene(root);
 				primaryStage.setScene(scene);
 				primaryStage.setTitle("Home Screen");
-				primaryStage.show();
 			}
-
+			primaryStage.show();
+			settingsHolder.getSettings().setWelcome(false);
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -40,7 +39,7 @@ public class Main extends Application {
 
 	@Override
 	public void stop(){
-		endingSetup(settings);
+		endingSetup(settingsHolder.getSettings());
 	}
 
 	//Helper function to get body measurements from properties file
@@ -63,7 +62,7 @@ public class Main extends Application {
 		File myObj = new File("settings.properties");
 		try {
 			if (myObj.createNewFile()) {
-				//Brand new file created!
+				//Brand-new file created!
 				Settings s = new Settings();
 				s.setWelcome(true);
 				return s;
@@ -75,7 +74,7 @@ public class Main extends Application {
 				boolean welcome = Boolean.parseBoolean(settings.getProperty("settings.welcome"));
 				boolean male = Boolean.parseBoolean(settings.getProperty("settings.male"));
 				MeasureUnit measureUnit;
-				if (settings.getProperty("settings.male").equals("cm") ){
+				if (settings.getProperty("settings.unitMeasure").equals("cm") ){
 					measureUnit = MeasureUnit.CM;
 				}else{
 					measureUnit = MeasureUnit.INCHES;
