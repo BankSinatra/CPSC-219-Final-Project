@@ -3,7 +3,7 @@ package application;
 public class Measurement {
     MeasureUnit unit;
     double value;
-    Measurement(MeasureUnit unit, double value){
+    public Measurement(MeasureUnit unit, double value){
         this.unit = unit;
         this.value = value;
     }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.bottomScreenMenController">
+   <children>
+      <Label text="Waist">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <HBox minHeight="-Infinity" prefWidth="200.0">
+         <children>
+            <TextField fx:id="tf_waist"/>
+            <Label fx:id="label_unit" text="Label" />
+         </children>
+      </HBox>
+      <Label fx:id="errorLabel" text="Error" textFill="RED" visible="false" />
+      <Label fx:id="label_size_results" text="Label" visible="false" />
+      <Button mnemonicParsing="false" onAction="#getMensBottomSize" text="Get Size" />
+   </children>
+</VBox>

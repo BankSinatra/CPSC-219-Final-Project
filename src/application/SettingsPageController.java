@@ -52,7 +52,7 @@ public class SettingsPageController {
         }
 
 
-        if(settingsHolder.getSettings().getUnitMeasurement().equals("inches")){
+        if(settingsHolder.getSettings().getUnitString().equals("inches")){
             cb_measure.setValue("Inches");
         }else{
             cb_measure.setValue("Centimeters");

@@ -2,7 +2,7 @@ package application.clothingModel;
 
 import application.Measurement;
 
-public class Waist {
+public class Waist{
     Boolean male;
     Measurement measurement;
 
@@ -16,6 +16,7 @@ public class Waist {
         this.measurement = measurement;
     }
 
+
     //When considering pant size, waist circumference in inches is the only important thing
     public int getBottomsSize() throws InvalidSizeException {
         double m = measurement.getInchesValue();
@@ -28,6 +29,7 @@ public class Waist {
         return (int) Math.ceil(m);
     }
 
+    //Women's top size is dependent on key value constants on the top;
     public int getFemaleTopSize() throws InvalidSizeException {
         double m = measurement.getCentimetersValue();
         if (m < 60){

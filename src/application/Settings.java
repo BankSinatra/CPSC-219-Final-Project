@@ -37,9 +37,14 @@ public class Settings {
 	}
 
 
-	public String getUnitMeasurement() {
+	public String getUnitString() {
 		return measurementUnit.toString().toLowerCase(Locale.ROOT);
 	}
+
+	public MeasureUnit getUnitMeasurement() {
+		return measurementUnit;
+	}
+
 
 
 	public void setUnitMeasurement(MeasureUnit unitmeasurement) {
