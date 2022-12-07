@@ -17,13 +17,24 @@ public class Waist {
     }
 
     //When considering pant size, waist circumference in inches is the only important thing
-    public int getBottomsSize(){
+    public int getBottomsSize() throws InvalidSizeException {
         double m = measurement.getInchesValue();
+        if (m < 24){
+            throw new InvalidSizeException("This calculator does not support sizes this small");
+        }else if(m > 52){
+            throw new InvalidSizeException("This calculator does not support sizes this large");
+        }
+
         return (int) Math.ceil(m);
     }
 
-    public int getWomensTopSize(){
+    public int getFemaleTopSize() throws InvalidSizeException {
         double m = measurement.getCentimetersValue();
+        if (m < 60){
+            throw new InvalidSizeException("This calculator does not support sizes this small");
+        }else if(m > 105){
+            throw new InvalidSizeException("This calculator does not support sizes this large");
+        }
         int i = 0;
         while(i < femalesTopsSizeKeys.length && m > femalesTopsSizeKeys[i]){
             i++;
