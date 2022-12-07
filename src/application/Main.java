@@ -64,7 +64,9 @@ public class Main extends Application {
 		try {
 			if (myObj.createNewFile()) {
 				//Brand new file created!
-				return new Settings();
+				Settings s = new Settings();
+				s.setWelcome(true);
+				return s;
 			} else {
 				//File exist already. Read from it
 				Properties settings = new Properties();
