@@ -23,12 +23,12 @@ public class Temperature {
 	}
 
 
-	private double getTemperature() {
+	double getTemperature() {
 		return temperature;
 	}
 
 
-	private void setTemperature(double temperature) {
+	public void setTemperature(double temperature) {
 		
 		this.temperature = temperature;
 	}
