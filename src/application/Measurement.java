@@ -23,4 +23,12 @@ public class Measurement {
             return value;
         }
     }
+
+    public void setValue(double value, MeasureUnit unit){
+        if(unit == MeasureUnit.INCHES){
+            this.value = value * 2.54;
+        }else{
+            this.value = value;
+        }
+    }
 }

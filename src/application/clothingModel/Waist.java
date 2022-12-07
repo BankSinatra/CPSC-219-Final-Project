@@ -11,7 +11,7 @@ public class Waist {
     private final int[] femalesTopsSizeValues =  {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
 
 
-    Waist(Boolean male, Measurement measurement){
+    public Waist(Boolean male, Measurement measurement){
         this.male = male;
         this.measurement = measurement;
     }
