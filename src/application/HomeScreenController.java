@@ -5,16 +5,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeScreenController {
+public class HomeScreenController{
 
     @FXML
     void switchToClothingChoiceScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ClothingChoiceView.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ClothingChoiceView.fxml"));
+        VBox root = loader.load();
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Settings");

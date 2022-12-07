@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class ClothingChoiceController {
+public class ClothingChoiceController{
 
     boolean tops = false;
 	boolean bottoms = false;
