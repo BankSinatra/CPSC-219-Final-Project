@@ -1,8 +1,6 @@
 package application;
 
 import java.util.ArrayList;
-package application;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -18,24 +16,18 @@ public class Outfit {
 
 
 
-	public Outfit(String name,double utemperature, double ltemperature) {
+	public Outfit(String name, double ltemperature, double utemperature) {
 		this.name = name;
 		this.uppertemperature = new Temperature(utemperature);
 		this.lowertemperature = new Temperature(ltemperature);
 	}
 	
 	 boolean tempcheck(double temp) {
-		 if(temp >= lowertemperature.getTemperature() && temp <= uppertemperature.getTemperature() ) {
-		return true;
-		 }
-		 else {
-	     return false;
-	     }
-		 
+		 return temp >= lowertemperature.getTemperature() && temp <= uppertemperature.getTemperature();
 	 }
 	 
 	 public String toString() {
-		 return "we reccomend wearing a," + this.name + "in this weather";
+		 return "We reccomend wearing a," + this.name + " in this weather";
 	 }
 
 
