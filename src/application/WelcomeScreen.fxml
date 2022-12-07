@@ -30,11 +30,11 @@
       </BorderPane>
       <BorderPane prefHeight="100.0" prefWidth="200.0">
          <center>
-            <ChoiceBox prefHeight="54.0" prefWidth="215.0" BorderPane.alignment="CENTER">
+            <ChoiceBox fx:id="cb_sex" prefHeight="54.0" prefWidth="215.0" BorderPane.alignment="CENTER">
                <items>
                   <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="Man" />
-                     <String fx:value="Woman" />
+                     <String fx:value="Male" />
+                     <String fx:value="Female" />
                   </FXCollections>
                </items>
             </ChoiceBox>
