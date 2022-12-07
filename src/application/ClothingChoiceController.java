@@ -5,7 +5,11 @@ import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ClothingChoiceController{
@@ -14,6 +18,9 @@ public class ClothingChoiceController{
 	boolean bottoms = false;
 	boolean hats = false;
 	boolean shoes = false;
+
+    SettingsHolder settingsHolder = SettingsHolder.getInstance();
+    Settings settings = settingsHolder.getSettings();
 
     @FXML
     private Button btn_hat_size;
@@ -48,8 +55,18 @@ public class ClothingChoiceController{
     }
     
     @FXML 
-    void calculateBottomsSize (ActionEvent event) {
-    	boolean bottoms = true;
+    void calculateBottomsSize (ActionEvent event) throws IOException {
+        if (settings.isMale()){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("bottomScreenMen.fxml"));
+            VBox root = loader.load();
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setTitle("Settings");
+            primaryStage.setScene(scene);
+
+            //Open in new window
+            primaryStage.show();
+        }
     }
     
     @FXML

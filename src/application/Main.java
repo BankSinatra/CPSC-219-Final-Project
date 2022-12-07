@@ -94,7 +94,7 @@ public class Main extends Application {
 
 			prop.setProperty("settings.welcome", String.valueOf(settings.isWelcome()));
 			prop.setProperty("settings.male",  String.valueOf(settings.isMale()));
-			prop.setProperty("settings.unitMeasure", settings.getUnitMeasurement());
+			prop.setProperty("settings.unitMeasure", settings.getUnitString());
 
 			prop.setProperty("bodyMeasurement.headCircumference", String.valueOf(settings.getMeasurements().getHeadCircumference()));
 			prop.setProperty("bodyMeasurement.footLength", String.valueOf(settings.getMeasurements().getFootLength()));
