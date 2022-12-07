@@ -32,22 +32,22 @@ public class Waist {
 	public String womensPants(double measurement) { // sizes xs - xxl cm
 		String size = "";
 		if (55.5 <= measurement && measurement < 58) {
-			size = "extra small";
+			size = "0";
 		}
 		else if (58 <= measurement && measurement < 60.5) {
-			size = "small";
+			size = "2";
 		}
 		else if (60.5 <= measurement && measurement < 63) {
-			size = "medium";
+			size = "4";
 		}
 		else if (63 <= measurement && measurement < 68) {
-			size = "large";
+			size = "6";
 		}
 		else if (68 <= measurement && measurement < 73) {
-			size = "extra large";
+			size = "8";
 		}
 		else if (73 <= measurement && measurement < 78) {
-			size = "xx large";
+			size = "10";
 		}
 		return size;
 	}
