@@ -5,6 +5,8 @@ public class FootLength {
 	public FootLength() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	// shoes sizes from https://www.zappos.com/c/shoe-size-conversion
 	// must be ran if men
 	public String calculateShoesMen(double measurement) { // size 6 - 12 range in cm
 		String size = "";
