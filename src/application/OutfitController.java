@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
@@ -13,12 +14,17 @@ import javafx.stage.Stage;
 
 public class OutfitController {
 
+
+	@FXML
+	private MenuButton tempUnitMenu;
+
 	@FXML
 	private TextField weatherTextfield;
 
 	@FXML
 	void switchToHomeScene(ActionEvent event) {
-
+			Stage stage = (Stage) weatherTextfield.getScene().getWindow();
+			stage.close();
 	}
 
 	@FXML
@@ -47,7 +53,6 @@ public class OutfitController {
 
 		ArrayList<Outfit> recs = new ArrayList<Outfit>();
 
-		System.out.println(fits.size());
 		for (Outfit o : fits) {
 			if (o.tempcheck(Double.parseDouble(weatherTextfield.getText()))) {
 				recs.add(o);

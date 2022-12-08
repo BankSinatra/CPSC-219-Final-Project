@@ -1,6 +1,7 @@
 package application;
 
 import java.io.*;
+import java.util.Objects;
 import java.util.Properties;
 
 import javafx.application.Application;
@@ -74,10 +75,14 @@ public class Main extends Application {
 				boolean welcome = Boolean.parseBoolean(settings.getProperty("settings.welcome"));
 				boolean male = Boolean.parseBoolean(settings.getProperty("settings.male"));
 				MeasureUnit measureUnit;
-				if (settings.getProperty("settings.unitMeasure").equals("cm") ){
-					measureUnit = MeasureUnit.CM;
+				if (settings.getProperty("settings.unitMeasure") != null) {
+					if (Objects.equals(settings.getProperty("settings.unitMeasure"), "cm")) {
+						measureUnit = MeasureUnit.CM;
+					} else {
+						measureUnit = MeasureUnit.INCHES;
+					}
 				}else{
-					measureUnit = MeasureUnit.INCHES;
+					measureUnit = MeasureUnit.CM;
 				}
 				return new Settings(measureUnit, male, bodyMeasurements, welcome);
 			}
