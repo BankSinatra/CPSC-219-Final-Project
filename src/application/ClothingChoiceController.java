@@ -1,7 +1,6 @@
 package application;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +8,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ClothingChoiceController{
@@ -57,7 +55,7 @@ public class ClothingChoiceController{
     @FXML 
     void calculateBottomsSize (ActionEvent event) throws IOException {
         if (settings.isMale()){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("bottomScreenMen.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("BottomScreenMen.fxml"));
             VBox root = loader.load();
             Scene scene = new Scene(root);
             Stage primaryStage = new Stage();

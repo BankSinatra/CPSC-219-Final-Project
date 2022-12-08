@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class bottomScreenMenController {
+public class BottomScreenMenController {
 
     private final SettingsHolder settingsHolder = SettingsHolder.getInstance();
 
