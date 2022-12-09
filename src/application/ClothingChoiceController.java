@@ -54,17 +54,20 @@ public class ClothingChoiceController{
     
     @FXML 
     void calculateBottomsSize (ActionEvent event) throws IOException {
+        FXMLLoader loader;
         if (settings.isMale()){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("BottomScreenMen.fxml"));
-            VBox root = loader.load();
-            Scene scene = new Scene(root);
-            Stage primaryStage = new Stage();
-            primaryStage.setTitle("Settings");
-            primaryStage.setScene(scene);
-
-            //Open in new window
-            primaryStage.show();
+            loader = new FXMLLoader(getClass().getResource("BottomScreenMen.fxml"));
+        }else{
+            loader = new FXMLLoader(getClass().getResource("BottomScreenWomen.fxml"));
         }
+        VBox root = loader.load();
+        Scene scene = new Scene(root);
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Bottoms");
+        primaryStage.setScene(scene);
+
+        //Open in new window
+        primaryStage.show();
     }
     
     @FXML
