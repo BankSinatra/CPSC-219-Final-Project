@@ -22,9 +22,10 @@ public class BottomScreenWomenController {
     public Label label_size_results;
 
     public void getWomensBottomSize(ActionEvent actionEvent) {
-        Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
-        Waist myWaist = new Waist(false,m);
-        Hip myHip = new Hip(m);
+        Measurement w = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
+        Measurement h = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
+        Waist myWaist = new Waist(false,w);
+        Hip myHip = new Hip(h);
 
         int bottomSize = 0;
         label_size_results.setVisible(false);
@@ -34,7 +35,6 @@ public class BottomScreenWomenController {
             if(myWaist.getBottomsSize() > bottomSize){
                 bottomSize = myWaist.getBottomsSize();
             }
-            label_size_results.setVisible(true);
             waist_errorLabel.setVisible(false);
             bodyMeasurements.setWaist(Double.parseDouble(tf_waist.getText()));
         } catch (InvalidSizeException e) {
@@ -46,7 +46,7 @@ public class BottomScreenWomenController {
                 bottomSize = myHip.getBottomsSize();
             }
             hips_errorLabel.setVisible(false);
-            bodyMeasurements.setWaist(Double.parseDouble(tf_waist.getText()));
+            bodyMeasurements.setHips(Double.parseDouble(tf_hips.getText()));
 
             label_size_results.setText(String.valueOf(bottomSize));
             label_size_results.setVisible(true);
@@ -57,13 +57,15 @@ public class BottomScreenWomenController {
     }
 
     public void initialize(){
+        System.out.println("Init");
         label_unit.setText(settings.getUnitString());
         String waistText = String.valueOf(bodyMeasurements.getWaist()) ;
-
+        System.out.println("Init2");
         tf_waist.setText(waistText);
 
         label_unit_2.setText(settings.getUnitString());
         String hipsText = String.valueOf(bodyMeasurements.getHips());
         tf_hips.setText(hipsText);
+        System.out.println("Init3");
     }
 }

@@ -5,9 +5,9 @@ public class BodyMeasurements {
 	private double headCircumference; //Hats
 	private double footLength; //Shoes
 	private double bust; //Women's tops, Jacket, Sweaters
-	private double waist; //Bottoms, Women's tops, Jacket, Sweaters
+	private double waist; //Bottoms, Women's tops, Jacket, Sweaters //
 	private double chest; //t-shirt and sweater
-	private double hips; //Women's tops, Jacket, Sweaters
+	private double hips; //Women's tops, Jacket, Sweaters, and bottoms//
 
 
 	BodyMeasurements(double headCircumference, double footLength, double bust, double waist,  double chest, double hips) {

@@ -39,7 +39,7 @@
         </HBox>
         <Label fx:id="hips_errorLabel" text="Error" textFill="RED" visible="false" />
 
-        <Label fx:id="label_size_results" text="Label" visible="false" />
+        <Label fx:id="label_size_results" text="" visible="false" />
         <Button mnemonicParsing="false" onAction="#getWomensBottomSize" text="Get Size" />
     </children>
 </VBox>
