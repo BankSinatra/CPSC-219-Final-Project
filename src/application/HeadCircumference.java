@@ -1,11 +1,25 @@
 package application;
 
+/**
+ * This application will take the head circumference measurement and find the hat size.
+ * @author CS219-user
+ *
+ */
 public class HeadCircumference {
-
+	
+	/**
+	 * empty constructor
+	 */
 	public HeadCircumference() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
+	// Hat size is gender neutral
+	/**
+	 *  Takes measurement and checks for which size range it fits into and then assigns size.
+	 * @param measurement is the double value from user for head circumference
+	 * @return string stating the hat size
+	 */
 	public String calculateHats(double measurement) {
 		String size = "";
 		if (54 <= measurement && measurement < 56) {
