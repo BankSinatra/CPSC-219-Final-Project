@@ -1,7 +1,6 @@
 package application.clothingModel;
 
 import application.Measurement;
-import application.clothingModel.InvalidSizeException;
 
 public class Hip {
     Measurement measurement;
