@@ -42,8 +42,8 @@ public class BottomScreenWomenController {
             waist_errorLabel.setVisible(true);
         }
         try{
-            if(myHip.getBottomsSize() > bottomSize){
-                bottomSize = myHip.getBottomsSize();
+            if(myHip.getHipSize() > bottomSize){
+                bottomSize = myHip.getHipSize();
             }
             hips_errorLabel.setVisible(false);
             bodyMeasurements.setHips(Double.parseDouble(tf_hips.getText()));
