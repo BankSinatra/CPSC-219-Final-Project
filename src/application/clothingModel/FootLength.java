@@ -18,12 +18,14 @@ public class FootLength {
 	
 	// shoes sizes from https://www.zappos.com/c/shoe-size-conversion
 	// must be ran if men
+
 	/**
-	 *  Takes measurement and checks for which men's size range it fits into and then assigns size.
-	 * @param measurement is the Measurement value from user for foot length
+	 * Takes measurement and checks for which men's size range it fits into and then assigns size.
+	 *
+	 * @param m is the Measurement value from user for foot length
 	 * @return string stating the shoe size
 	 */
-	public String calculateShoesMen(double measurement) { // size 6 - 12 range in cm
+	public String calculateShoesMen(Measurement m) throws InvalidSizeException { // size 6 - 12 range in cm
 		String size = "";
 		double measurement = m.getCentimetersValue();
 		if (measurement < 23.5){
