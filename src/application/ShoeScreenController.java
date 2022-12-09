@@ -1,5 +1,6 @@
 package application;
 
+import application.clothingModel.FootLength;
 import application.clothingModel.InvalidSizeException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
