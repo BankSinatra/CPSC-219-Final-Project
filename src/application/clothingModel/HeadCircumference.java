@@ -1,13 +1,22 @@
 package application.clothingModel;
 
-public class HeadCircumference {
+import application.Measurement;
 
-	public HeadCircumference() {
-		// TODO Auto-generated constructor stub
+public class HeadCircumference {
+	Measurement measurement;
+
+	public HeadCircumference(Measurement measurement) {
+		this.measurement = measurement;
 	}
 	
-	public String calculateHats(double measurement) {
+	public String getHatSize(Measurement m) throws InvalidSizeException{
 		String size = "";
+		double measurement = m.getCentimetersValue();
+		if (measurement < 54){
+			throw new InvalidSizeException("This calculator does not support head sizes this small");
+		}else if(measurement > 65){
+			throw new InvalidSizeException("This calculator does not support head sizes this large");
+		}
 		if (54 <= measurement && measurement < 56) {
 			size = "small";
 		}
@@ -26,7 +35,6 @@ public class HeadCircumference {
 		else if (64 <= measurement && measurement <= 65) {
 			size = "xxx large";
 		}
-		
 		return size;
 	}
 

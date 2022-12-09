@@ -38,19 +38,25 @@ public class ClothingChoiceController{
     }
     
     @FXML
-    void calculateHatSize(ActionEvent event) {
-    	boolean hats = true;
+    void calculateHatSize(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("HatScreen.fxml"));
+        VBox root = loader.load();
+        Scene scene = new Scene(root);
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Hats");
+        primaryStage.setScene(scene);
+        //Open in new window
+        primaryStage.show();
     }
-    
+
     @FXML
     void calculateShoeSize (ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ShoeScreen.fxml"));
         VBox root = loader.load();
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("Bottoms");
+        primaryStage.setTitle("Shoes");
         primaryStage.setScene(scene);
-
         //Open in new window
         primaryStage.show();
     }
