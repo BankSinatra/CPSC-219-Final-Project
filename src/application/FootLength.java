@@ -60,7 +60,7 @@ public class FootLength {
 		return size;
 	}
 
-	public String calculateShoes(boolean male, Measurement m) throws InvalidSizeException {
+	public String getShoes(boolean male, Measurement m) throws InvalidSizeException {
 		if (male){
 			return calculateShoesMen(m);
 		}else{

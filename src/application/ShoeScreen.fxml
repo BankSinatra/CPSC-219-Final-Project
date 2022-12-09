@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ShoeScreenController">
     <children>
-        <Label text="Waist">
+        <Label text="Foot Length">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
