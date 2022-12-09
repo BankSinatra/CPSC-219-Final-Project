@@ -10,6 +10,12 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Buttons clicked within clothing choice scene will be controlled here to ensure correct
+ *  clothing options are called for sizing.
+ * @author CS219-user
+ *
+ */
 public class ClothingChoiceController{
 
     boolean tops = false;
@@ -31,27 +37,49 @@ public class ClothingChoiceController{
     @FXML
     private Button btn_shoe_size;
 
+    /**
+     * Allows the clothing choice scene to switch back to home scene.
+     * @param event triggered when button is clicked
+     * @throws IOException
+     */
     @FXML
     public void switchToHomeScene (ActionEvent event) throws IOException {
         Stage stage = (Stage) btn_hat_size.getScene().getWindow();
         stage.close();
     }
-    
+
+    /**
+     * When hat button is clicked application will know that hats need to be calculated.
+     * @param event triggered when button is clicked
+     */
     @FXML
     void calculateHatSize(ActionEvent event) {
     	boolean hats = true;
     }
     
+    /**
+     * When shoe button is clicked application will know that shoe size needs to be calculated.
+     * @param event triggered when button is clicked
+     */
     @FXML
     void calculateShoeSize (ActionEvent event) {
     	boolean shoes = true;
     }
     
+    /**
+     * When tops button is clicked application will know that tops size need to be calculated.
+     * @param event triggered when button is clicked
+     */
     @FXML
     void calculateTopsSize (ActionEvent event) {
     	boolean tops = true;
     }
     
+   /**
+    * When bottoms button is clicked new scene will open prompting user for correlating sizes
+    * @param event triggered once bottoms button is clicked.
+    * @throws IOException
+    */
     @FXML 
     void calculateBottomsSize (ActionEvent event) throws IOException {
         FXMLLoader loader;
@@ -70,6 +98,10 @@ public class ClothingChoiceController{
         primaryStage.show();
     }
     
+    /**
+     * When get size button is clicked application will get size.
+     * @param event triggered when button is clicked
+     */
     @FXML
     void calculateSize (ActionEvent event) {
     	System.out.println("get size button clicked");
