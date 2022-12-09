@@ -1,17 +1,13 @@
 package application;
 
-import application.MeasureUnit;
-import application.Measurement;
-import application.SettingsHolder;
 import application.clothingModel.InvalidSizeException;
 import application.clothingModel.Waist;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class BottomScreenMenController {
+public class BottomScreenMenController{
 
     private final SettingsHolder settingsHolder = SettingsHolder.getInstance();
 
@@ -39,6 +35,7 @@ public class BottomScreenMenController {
             label_size_results.setText(String.valueOf(myWaist.getBottomsSize()));
             label_size_results.setVisible(true);
             errorLabel.setVisible(false);
+            settingsHolder.getSettings().getMeasurements().setWaist(Double.parseDouble(tf_waist.getText()));
         } catch (InvalidSizeException e) {
             errorLabel.setText(e.getMessage());
             errorLabel.setVisible(true);
@@ -47,7 +44,7 @@ public class BottomScreenMenController {
 
     public void initialize(){
         label_unit.setText(settingsHolder.getSettings().getUnitString());
-        String text = String.valueOf(settingsHolder.getSettings().getMeasurements().getHips()) ;
+        String text = String.valueOf(settingsHolder.getSettings().getMeasurements().getWaist()) ;
         tf_waist.setText(text);
     }
 }
