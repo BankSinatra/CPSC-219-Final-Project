@@ -1,5 +1,11 @@
 package application;
 
+/**
+ * The Body Measurements application assigns the body measurement's specific measurements to 
+ * their corresponding instance variables.
+ * @author CS219-user
+ *
+ */
 public class BodyMeasurements {
 	//These sizes are based on the sizes used on ASOS: https://www.asos.com/us/discover/size-charts/
 	private double headCircumference; //Hats
@@ -9,7 +15,15 @@ public class BodyMeasurements {
 	private double chest; //t-shirt and sweater
 	private double hips; //Women's tops, Jacket, Sweaters
 
-
+	/***
+	 * Takes all size measurement inputs and sets them.
+	 * @param headCircumference first parameter, used for hat sizes
+	 * @param footLength second parameter, used for shoe sizes
+	 * @param bust third parameter, used for women's tops, jackets and sweaters
+	 * @param waist fourth parameter, used for bottoms, women's tops, jackets and sweaters
+	 * @param chest fifth parameter, used for tshirt and sweaters
+	 * @param hips sixth parameter, used for women's tops, jackets and sweaters
+	 */
 	BodyMeasurements(double headCircumference, double footLength, double bust, double waist,  double chest, double hips) {
 		setHeadCircumference(headCircumference);
 		setFootLength(footLength);
@@ -18,9 +32,17 @@ public class BodyMeasurements {
 		setChest(chest);
 		setHips(hips);
 	}
+	
+	/**
+	 * Empty constructor
+	 */
 	BodyMeasurements() {
 	}
 
+	/**
+	 * Takes body measurements and gets the specific measurements within to set the instance variables.
+	 * @param bodyMeasurements all the measurements passed in of body measurement class
+	 */
 	BodyMeasurements(BodyMeasurements bodyMeasurements){
 		this.headCircumference = bodyMeasurements.getHeadCircumference();
 		this.footLength = bodyMeasurements.getHeadCircumference();
@@ -30,60 +52,98 @@ public class BodyMeasurements {
 		this.hips = bodyMeasurements.getHips();
 	}
 	
-	// need measurements for: US SIZING
-
-	// hat - need head circumference. small: 54-55cm medium: 56-57cm large: 58-59cm extra large: 60-61cm xxlarge: 62-63cm xxxlarge: 64-65cm
+	/***
+	 * Getter for head circumference measurement
+	 * @return value of head circumference
+	 */
 	double getHeadCircumference() {
 		return headCircumference;
 	}
-
+	
+	/**
+	 * Sets the head circumference.
+	 * @param headCircumference as a double is used to set the instance variable.
+	 */
 	void setHeadCircumference(double headCircumference) {
 			this.headCircumference = headCircumference;
 	}
 
-	// shoes - need foot length. mens: size 6-12 range: 23.5cm - 28.6cm
-	// woman: size 4-10 range: 20.8 - 25.9cm
+	/**
+	 * Getter for foot length measurement
+	 * @return value of foot length
+	 */
 	double getFootLength() {
 		return footLength;
 	}
-
+	
+	/**
+	 * Sets the foot length.
+	 * @param footLength as a double is used to set the instance variable.
+	 */
 	void setFootLength(double footLength) {
 		this.footLength = footLength;
 	}
 	
-	// bottoms waist and inseam. mens: xsmall: 76 - 80 small: 80-84  medium: 84-88 large: 88-93 xlarge: 93-98cm
-	//                           mens: short: 76 - 80 regular: 80 - 84 long: 84 - 88
-	// womens: xsmall: 64-68 small: 68-72 medium: 72-76 large: 76-81 xlarge: 81-86
-	// short: 74-78 regular: 78-82 long: 82 - 86
-
+	/**
+	 * Getter for waist measurement
+	 * @return value of waist measurement
+	 */
 	double getWaist() {
 		return waist;
 	}
 
+	/**
+	 * Sets the waist measurement.
+	 * @param waist as a double is used to set the instance variable.
+	 */
 	void setWaist(double waist) {
 		this.waist = waist;
 	}
-
+	
+	/**
+	 * Getter for chest measurement
+	 * @return value of chest measurement
+	 */
 	public double getChest() {
 		return chest;
 	}
 
+	/**
+	 * Sets the chest measurement.
+	 * @param chest as a double is used to set the instance variable.
+	 */
 	public void setChest(double chest) {
 		this.chest = chest;
 	}
 
+	/**
+	 * Getter for hips measurement
+	 * @return value of hips measurement
+	 */
 	public double getHips() {
 		return hips;
 	}
 
+	/**
+	 * Sets the hips measurement.
+	 * @param hips as a double is used to set the instance variable.
+	 */
 	public void setHips(double hips) {
 		this.hips = hips;
 	}
 
+	/**
+	 * Getter for bust measurement
+	 * @return value of bust measurement
+	 */
 	public double getBust() {
 		return bust;
 	}
 
+	/**
+	 * Sets the bust measurement.
+	 * @param bust as a double is used to set the instance variable.
+	 */
 	public void setBust(double bust) {
 		this.bust = bust;
 	}
