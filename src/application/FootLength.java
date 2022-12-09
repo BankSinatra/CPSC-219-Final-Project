@@ -1,15 +1,23 @@
 package application;
 
-public class FootLength {
+import application.clothingModel.InvalidSizeException;
 
-	public FootLength() {
-		// TODO Auto-generated constructor stub
+public class FootLength {
+	Measurement measurement;
+	public FootLength(Measurement measurement) {
+		this.measurement = measurement;
 	}
 	
 	// shoes sizes from https://www.zappos.com/c/shoe-size-conversion
-	// must be ran if men
-	public String calculateShoesMen(double measurement) { // size 6 - 12 range in cm
+	// must be run if men
+	private String calculateShoesMen(Measurement m) throws InvalidSizeException { // size 6 - 12 range in cm
 		String size = "";
+		double measurement = m.getCentimetersValue();
+		if (measurement < 23.5){
+			throw new InvalidSizeException("This calculator does not support foot sizes this small");
+		}else if(measurement > 29.4){
+			throw new InvalidSizeException("This calculator does not support foot sizes this large");
+		}
 		if (23.5<= measurement && measurement < 24.1) {
 			size = "6";
 		}
@@ -51,9 +59,24 @@ public class FootLength {
 		}
 		return size;
 	}
+
+	public String calculateShoes(boolean male, Measurement m) throws InvalidSizeException {
+		if (male){
+			return calculateShoesMen(m);
+		}else{
+			return calculateShoesWomen(m);
+		}
+	}
+
 // must be used if women somehow
-	public String calculateShoesWomen (double measurement) { // size 4-10 cm
+	private String calculateShoesWomen (Measurement m) throws InvalidSizeException { // size 4-10
 		String size = "";
+		double measurement = m.getCentimetersValue();
+		if (measurement < 20.8){
+			throw new InvalidSizeException("This calculator does not support foot sizes this small");
+		}else if(measurement > 26.2){
+			throw new InvalidSizeException("This calculator does not support foot sizes this large");
+		}
 		if (20.8 <= measurement && measurement < 21.3) {
 			size = "4";
 		}
