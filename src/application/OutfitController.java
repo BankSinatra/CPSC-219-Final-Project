@@ -49,7 +49,18 @@ public class OutfitController {
 
 		}
 	}
-
+/**
+ * The getOutfit method is meant to match the information from the temperature
+ * the user inputed and match it with outfits that have appropriate
+ * set bounds
+ * 
+ * @param event takes the value inputed in the temperature unit menu
+ * validates its value if the units are in celcius. Create set outfits with
+ * a name, lower bound, and upperbound. There is a creation of two different lists,
+ * one that contains all the outfits, and the crucial one that adds outfits
+ * under the condition that the outfit passes the tempcheck test that has
+ * the users stored bounds.
+ */
 	@FXML
 	void getOutfit(ActionEvent event) {
 		try {

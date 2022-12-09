@@ -20,7 +20,11 @@ public class SettingsPageController {
 
     @FXML
     private Button btn_home;
-
+/**
+ * When the user switches the scene it will keep the information that
+ * they have already entered
+ * @param actionEvent Event that unfolds after user pressed the button
+ */
     public void switchToHomeScene(ActionEvent actionEvent) {
         Stage stage = (Stage) btn_home.getScene().getWindow();
         String sex = cb_sex.getValue();
@@ -43,7 +47,10 @@ public class SettingsPageController {
 
         stage.close();
     }
-
+/**
+ * Initializes values based off information that has already
+ * been entered by the user
+ */
     public void initialize(){
         if (settingsHolder.getSettings().isMale()){
             cb_sex.setValue("Male");
