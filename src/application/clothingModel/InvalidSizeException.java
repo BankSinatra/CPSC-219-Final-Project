@@ -1,7 +1,7 @@
 package application.clothingModel;
 
 public class InvalidSizeException extends Exception{
-    InvalidSizeException(String msg){
+    public InvalidSizeException(String msg){
         super(msg);
     }
 }
