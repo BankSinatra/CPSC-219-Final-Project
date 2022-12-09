@@ -1,13 +1,26 @@
 package application;
 
+/**
+ * This application will take the foot length measurement and find the shoe size.
+ * @author CS219-user
+ *
+ */
 public class FootLength {
 
+	/**
+	 * empty constructor
+	 */
 	public FootLength() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	// shoes sizes from https://www.zappos.com/c/shoe-size-conversion
 	// must be ran if men
+	/**
+	 *  Takes measurement and checks for which men's size range it fits into and then assigns size.
+	 * @param measurement is the double value from user for foot length
+	 * @return string stating the shoe size
+	 */
 	public String calculateShoesMen(double measurement) { // size 6 - 12 range in cm
 		String size = "";
 		if (23.5<= measurement && measurement < 24.1) {
@@ -51,7 +64,12 @@ public class FootLength {
 		}
 		return size;
 	}
-// must be used if women somehow
+	// must be used if women
+	/**
+	 *  Takes measurement and checks for which woman's size range it fits into and then assigns size.
+	 * @param measurement is the double value from user for foot length
+	 * @return string stating the shoe size
+	 */
 	public String calculateShoesWomen (double measurement) { // size 4-10 cm
 		String size = "";
 		if (20.8 <= measurement && measurement < 21.3) {

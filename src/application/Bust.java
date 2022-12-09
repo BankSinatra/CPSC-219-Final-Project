@@ -16,7 +16,7 @@ public class Bust {
 	}
 
 	/**
-	 * Takes measurement and checks for which range size range it fits into and then assigns size.
+	 * Takes measurement and checks for which size range it fits into and then assigns size.
 	 * @param measurement is the double value from user for bust size
 	 * @return string stating the size of clothing
 	 */
