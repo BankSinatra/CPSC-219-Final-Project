@@ -18,24 +18,11 @@ import javafx.stage.Stage;
  */
 public class ClothingChoiceController{
 
-    boolean tops = false;
-	boolean bottoms = false;
-	boolean hats = false;
-	boolean shoes = false;
-
     SettingsHolder settingsHolder = SettingsHolder.getInstance();
     Settings settings = settingsHolder.getSettings();
 
     @FXML
     private Button btn_hat_size;
-    @FXML
-    private Button btn_bottom_size;
-    @FXML
-    private Button btn_jacket_size;
-    @FXML
-    private Button btn_sweater_size;
-    @FXML
-    private Button btn_shoe_size;
 
     /**
      * Allows the clothing choice scene to switch back to home scene.
@@ -86,8 +73,22 @@ public class ClothingChoiceController{
      * @param event triggered when button is clicked
      */
     @FXML
-    void calculateTopsSize (ActionEvent event) {
-    	boolean tops = true;
+    void calculateTopsSize (ActionEvent event) throws IOException {
+        FXMLLoader loader;
+        if (settings.isMale()){
+            loader = new FXMLLoader(getClass().getResource("TopScreenMen.fxml"));
+        }else{
+            loader = new FXMLLoader(getClass().getResource("TopScreenWomen.fxml"));
+        }
+        VBox root = loader.load();
+        Scene scene = new Scene(root);
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Tops");
+        primaryStage.setScene(scene);
+
+        //Open in new window
+        primaryStage.show();
+
     }
     
    /**
