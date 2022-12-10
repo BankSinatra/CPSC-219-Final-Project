@@ -7,13 +7,12 @@ package application;
  *
  */
 public class BodyMeasurements {
-	//These sizes are based on the sizes used on ASOS: https://www.asos.com/us/discover/size-charts/
-	private double headCircumference; //Hats
-	private double footLength; //Shoes
-	private double bust; //Women's tops, Jacket, Sweaters
-	private double waist; //Bottoms, Women's tops, Jacket, Sweaters //
-	private double chest; //t-shirt and sweater
-	private double hips; //Women's tops, Jacket, Sweaters, and bottoms//
+	private double headCircumference;
+	private double footLength;
+	private double bust;
+	private double waist;
+	private double chest;
+	private double hips;
 
 	/***
 	 * Takes all size measurement inputs and sets them.
