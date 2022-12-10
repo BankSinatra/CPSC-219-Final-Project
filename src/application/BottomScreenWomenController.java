@@ -30,16 +30,13 @@ public class BottomScreenWomenController {
      * @param actionEvent Javafx's parameter for getting event details
      */
     public void getWomensBottomSize(ActionEvent actionEvent) {
-        Measurement w = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
-        Measurement h = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
-        Waist myWaist = new Waist(false,w);
-        Hip myHip = new Hip(h);
-
         int bottomSize = 0;
         label_size_results.setVisible(false);
         waist_errorLabel.setVisible(false);
         hips_errorLabel.setVisible(false);
         try{
+            Measurement w = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
+            Waist myWaist = new Waist(false,w);
             if(myWaist.getBottomsSize() > bottomSize){
                 bottomSize = myWaist.getBottomsSize();
             }
@@ -48,8 +45,13 @@ public class BottomScreenWomenController {
         } catch (InvalidSizeException e) {
             waist_errorLabel.setText(e.getMessage());
             waist_errorLabel.setVisible(true);
+        }catch (NumberFormatException e) {
+            waist_errorLabel.setText("Please enter a number");
+            waist_errorLabel.setVisible(true);
         }
         try{
+            Measurement h = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
+            Hip myHip = new Hip(h);
             if(myHip.getHipSize() > bottomSize){
                 bottomSize = myHip.getHipSize();
             }
@@ -60,6 +62,9 @@ public class BottomScreenWomenController {
             label_size_results.setVisible(true);
         } catch (InvalidSizeException e) {
             hips_errorLabel.setText(e.getMessage());
+            hips_errorLabel.setVisible(true);
+        }catch (NumberFormatException e) {
+            hips_errorLabel.setText("Please enter a number");
             hips_errorLabel.setVisible(true);
         }
     }
