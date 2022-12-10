@@ -18,6 +18,11 @@ public class TopScreenMenController {
     public Label label_unit;
     public TextField tf_chest;
 
+    /**
+     * Displays the top size for men to its window. Uses chest measurements to calculate
+     * @param actionEvent Javafx's parameter for getting event details
+     */
+
     public void getMensTopSize(ActionEvent actionEvent) {
         Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_chest.getText()));
         Chest myChest = new Chest(m);
@@ -32,6 +37,9 @@ public class TopScreenMenController {
         }
     }
 
+    /**
+     * Setting up units and text for the text field
+     */
     public void initialize() {
         label_unit.setText(settingsHolder.getSettings().getUnitString());
         String text = String.valueOf(settingsHolder.getSettings().getMeasurements().getChest());

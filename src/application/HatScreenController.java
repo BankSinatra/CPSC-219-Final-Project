@@ -6,6 +6,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+/**
+ * Controller for the hat screen
+ * @author CS219-user
+ *
+ */
 
 public class HatScreenController {
 
@@ -25,6 +30,10 @@ public class HatScreenController {
     @FXML
     private TextField tf_circumference;
 
+    /**
+     * Displays the hat size for men and women to it's window
+     * @param actionEvent Javafx's parameter for getting event details
+     */
     public void getHatSize(ActionEvent actionEvent) {
         Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_circumference.getText()));
         HeadCircumference myHead = new HeadCircumference(m);
@@ -40,7 +49,9 @@ public class HatScreenController {
             errorLabel.setVisible(true);
         }
     }
-
+    /**
+     * Setting up units and text for the text field
+     */
     public void initialize(){
         label_unit.setText(settingsHolder.getSettings().getUnitString());
         String text = String.valueOf(settingsHolder.getSettings().getMeasurements().getFootLength()) ;

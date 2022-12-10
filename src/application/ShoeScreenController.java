@@ -27,6 +27,11 @@ public class ShoeScreenController {
     @FXML
     private Label label_size_results;
 
+    /**
+     * Displays the show size for men and women to its window. Takes foot length measurements to calculate this
+     * @param actionEvent Javafx's parameter for getting event details
+     */
+
     public void getShoeSize(ActionEvent actionEvent) {
         Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_foot.getText()));
         FootLength myFoot = new FootLength(m);
@@ -40,7 +45,9 @@ public class ShoeScreenController {
             errorLabel.setVisible(true);
         }
     }
-
+    /**
+     * Setting up units and text for the text field
+     */
     public void initialize(){
         label_unit.setText(settingsHolder.getSettings().getUnitString());
         String text = String.valueOf(settingsHolder.getSettings().getMeasurements().getWaist()) ;

@@ -36,6 +36,11 @@ public class TopScreenWomenController {
     @FXML
     private TextField tf_bust;
 
+    /**
+     * Displays the top size for women to it's window. It checks waist, bust, and hip measurements
+     * @param actionEvent Javafx's parameter for getting event details
+     */
+
     public void getWomenTopSize(ActionEvent actionEvent) {
         Measurement w = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
         Measurement h = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
@@ -50,8 +55,8 @@ public class TopScreenWomenController {
         hips_errorLabel.setVisible(false);
         bust_errorLabel.setVisible(false);
         try{
-            if(myWaist.getBottomsSize() > bottomSize){
-                bottomSize = myWaist.getBottomsSize();
+            if(myWaist.getFemaleTopSize() > bottomSize){
+                bottomSize = myWaist.getFemaleTopSize();
             }
             waist_errorLabel.setVisible(false);
             bodyMeasurements.setWaist(Double.parseDouble(tf_waist.getText()));
@@ -84,6 +89,9 @@ public class TopScreenWomenController {
         }
     }
 
+    /**
+     * Setting up units and text for the text field
+     */
     public void initialize(){
         label_unit.setText(settings.getUnitString());
         String waistText = String.valueOf(bodyMeasurements.getWaist()) ;
