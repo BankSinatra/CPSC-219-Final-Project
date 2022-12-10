@@ -35,9 +35,9 @@ public class HatScreenController {
      * @param actionEvent Javafx's parameter for getting event details
      */
     public void getHatSize(ActionEvent actionEvent) {
-        Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_circumference.getText()));
-        HeadCircumference myHead = new HeadCircumference(m);
         try{
+            Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_circumference.getText()));
+            HeadCircumference myHead = new HeadCircumference(m);
             label_size_results.setText(myHead.getHatSize(m));
             label_size_results.setVisible(true);
             errorLabel.setVisible(false);
@@ -46,6 +46,9 @@ public class HatScreenController {
             System.out.println(settingsHolder.getSettings().getMeasurements().getHeadCircumference());
         } catch (InvalidSizeException e) {
             errorLabel.setText(e.getMessage());
+            errorLabel.setVisible(true);
+        }catch (NumberFormatException e) {
+            errorLabel.setText("Please enter a number");
             errorLabel.setVisible(true);
         }
     }

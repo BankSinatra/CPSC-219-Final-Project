@@ -28,15 +28,18 @@ public class TopScreenMenController {
      * @param actionEvent Javafx's parameter for getting event details
      */
     public void getMensTopSize(ActionEvent actionEvent) {
-        Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_chest.getText()));
-        Chest myChest = new Chest(m);
         try{
+            Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_chest.getText()));
+            Chest myChest = new Chest(m);
             label_size_results.setText(String.valueOf(myChest.getTopSize()));
             label_size_results.setVisible(true);
             errorLabel.setVisible(false);
             settingsHolder.getSettings().getMeasurements().setChest(Double.parseDouble(tf_chest.getText()));
         } catch (InvalidSizeException e) {
             errorLabel.setText(e.getMessage());
+            errorLabel.setVisible(true);
+        }catch (NumberFormatException e) {
+            errorLabel.setText("Please enter a number");
             errorLabel.setVisible(true);
         }
     }

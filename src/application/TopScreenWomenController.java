@@ -42,19 +42,14 @@ public class TopScreenWomenController {
      */
 
     public void getWomenTopSize(ActionEvent actionEvent) {
-        Measurement w = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
-        Measurement h = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
-        Measurement b = new Measurement(measureUnit, Double.parseDouble(tf_bust.getText()));
-        Waist myWaist = new Waist(false,w);
-        Hip myHip = new Hip(h);
-        Bust myBust = new Bust(b);
-
         int bottomSize = 0;
         label_size_results.setVisible(false);
         waist_errorLabel.setVisible(false);
         hips_errorLabel.setVisible(false);
         bust_errorLabel.setVisible(false);
         try{
+            Measurement w = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
+            Waist myWaist = new Waist(false,w);
             if(myWaist.getFemaleTopSize() > bottomSize){
                 bottomSize = myWaist.getFemaleTopSize();
             }
@@ -63,8 +58,13 @@ public class TopScreenWomenController {
         } catch (InvalidSizeException e) {
             waist_errorLabel.setText(e.getMessage());
             waist_errorLabel.setVisible(true);
+        }catch (NumberFormatException e) {
+            waist_errorLabel.setText("Please enter a number");
+            waist_errorLabel.setVisible(true);
         }
         try{
+            Measurement h = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
+            Hip myHip = new Hip(h);
             if(myHip.getHipSize() > bottomSize){
                 bottomSize = myHip.getHipSize();
             }
@@ -73,8 +73,13 @@ public class TopScreenWomenController {
         } catch (InvalidSizeException e) {
             hips_errorLabel.setText(e.getMessage());
             hips_errorLabel.setVisible(true);
+        }catch (NumberFormatException e) {
+            hips_errorLabel.setText("Please enter a number");
+            hips_errorLabel.setVisible(true);
         }
         try{
+            Measurement b = new Measurement(measureUnit, Double.parseDouble(tf_bust.getText()));
+            Bust myBust = new Bust(b);
             if(myBust.getWomenTops() > bottomSize){
                 bottomSize = myBust.getWomenTops();
             }
@@ -85,6 +90,9 @@ public class TopScreenWomenController {
             label_size_results.setVisible(true);
         } catch (InvalidSizeException e) {
             bust_errorLabel.setText(e.getMessage());
+            bust_errorLabel.setVisible(true);
+        }catch (NumberFormatException e) {
+            bust_errorLabel.setText("Please enter a number");
             bust_errorLabel.setVisible(true);
         }
     }

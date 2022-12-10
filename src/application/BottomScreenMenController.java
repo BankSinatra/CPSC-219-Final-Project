@@ -36,9 +36,9 @@ public class BottomScreenMenController{
      * @param actionEvent Javafx's parameter for getting event details
      */
     public void getMensBottomSize(ActionEvent actionEvent) {
-        Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
-        Waist myWaist = new Waist(male,m);
         try{
+            Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
+            Waist myWaist = new Waist(male,m);
             label_size_results.setText(String.valueOf(myWaist.getBottomsSize()));
             label_size_results.setVisible(true);
             errorLabel.setVisible(false);
