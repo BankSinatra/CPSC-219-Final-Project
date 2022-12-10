@@ -36,17 +36,4 @@ public class Measurement {
             return value;
         }
     }
-/**
- * value setter
- * @param value if measurements are originally in inches the value gets
- * set as centremeters
- * @param unit is used to validate the input before setting it as value
- */
-    public void setValue(double value, MeasureUnit unit){
-        if(unit == MeasureUnit.INCHES){
-            this.value = value * 2.54;
-        }else{
-            this.value = value;
-        }
-    }
 }
