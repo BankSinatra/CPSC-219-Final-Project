@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="application.TopScreenWomenController"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+        <Label text="Waist">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <HBox minHeight="-Infinity" prefWidth="200.0">
+            <children>
+                <TextField fx:id="tf_waist"/>
+                <Label fx:id="label_unit" text="Label" />
+            </children>
+        </HBox>
+        <Label fx:id="waist_errorLabel" text="Error" textFill="RED" visible="false" />
+
+        <Label text="Hips">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <HBox minHeight="-Infinity" prefWidth="200.0">
+            <children>
+                <TextField fx:id="tf_hips"/>
+                <Label fx:id="label_unit_2" text="Label" />
+            </children>
+        </HBox>
+        <Label fx:id="hips_errorLabel" text="Error" textFill="RED" visible="false" />
+
+        <Label text="Bust">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <HBox minHeight="-Infinity" prefWidth="200.0">
+            <children>
+                <TextField fx:id="tf_bust"/>
+                <Label fx:id="label_unit_3" text="Label" />
+            </children>
+        </HBox>
+        <Label fx:id="bust_errorLabel" text="Error" textFill="RED" visible="false" />
+
+        <Label fx:id="label_size_results" visible="false" />
+        <Button mnemonicParsing="false" onAction="#getWomenTopSize" text="Get Size" />
+    </children>
+</VBox>
