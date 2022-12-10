@@ -58,27 +58,6 @@
                   </FXCollections>
                </items>
             </ChoiceBox>
-            <Label text="Change a size measurement:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-               <font>
-                  <Font size="16.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets right="10.0" />
-               </padding></Label>
-            <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <items>
-                  <FXCollections fx:factory="observableArrayList">
-                     <String fx:value="Waist" />
-                     <String fx:value="Hip" />
-                     <String fx:value="Circumference" />
-                     <String fx:value="Shoe size" />
-
-                  </FXCollections>
-               </items>
-            </ChoiceBox>
          </children>
       </GridPane>
       <BorderPane prefHeight="55.0" prefWidth="500.0">
