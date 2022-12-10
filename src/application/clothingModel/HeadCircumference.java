@@ -2,13 +2,23 @@ package application.clothingModel;
 
 import application.Measurement;
 
+/**
+ * This class will take the head circumference measurement and find the hat size.
+ * @author CS219-user
+ *
+ */
 public class HeadCircumference {
 	Measurement measurement;
 
 	public HeadCircumference(Measurement measurement) {
 		this.measurement = measurement;
 	}
-	
+
+	/**
+	 *  Takes measurement and checks for which size range it fits into and then assigns size.
+	 * @param m is the Measurement value from user for head circumference
+	 * @return string stating the hat size
+	 */
 	public String getHatSize(Measurement m) throws InvalidSizeException{
 		String size = "";
 		double measurement = m.getCentimetersValue();

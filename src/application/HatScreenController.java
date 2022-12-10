@@ -38,7 +38,7 @@ public class HatScreenController {
         Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_circumference.getText()));
         HeadCircumference myHead = new HeadCircumference(m);
         try{
-            label_size_results.setText(String.valueOf(myHead.getHatSize(m)));
+            label_size_results.setText(myHead.getHatSize(m));
             label_size_results.setVisible(true);
             errorLabel.setVisible(false);
             System.out.println(tf_circumference.getText());
