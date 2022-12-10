@@ -43,7 +43,11 @@ public class Main extends Application {
 		endingSetup(settingsHolder.getSettings());
 	}
 
-	//Helper function to get body measurements from properties file
+	/**
+	 * Helper function to get body measurements from properties file
+	 * @param properties A properties class we want to read from
+	 * @return A bodyMeasurements class created from the properties file
+	 */
 	private BodyMeasurements measureSetup(Properties properties){
 		try {
 			double head = Double.parseDouble(properties.getProperty("bodyMeasurement.headCircumference"));
@@ -58,7 +62,11 @@ public class Main extends Application {
 		}
 	}
 
-	//Try to read from file
+	/**
+	 * Tries to read from the settings.properties file (If it exists) to generate a settings configuration when the program opens. If it doesn't exist, it creates one
+	 * Learned file reading from: https://mkyong.com/java/java-properties-file-examples/ and https://www.w3schools.com/java/java_files_create.asp
+	 * @return a settings file to use
+	 */
 	private Settings settingsSetup() {
 		File myObj = new File("settings.properties");
 		try {
@@ -92,7 +100,10 @@ public class Main extends Application {
 		return new Settings();
 	}
 
-
+	/**
+	 * Reads the settings file to edit the settings.properties file and save settings
+	 * @param settings the settings file that is being read
+	 */
 	private void endingSetup(Settings settings){
 		try(OutputStream output = new FileOutputStream("settings.properties")){
 			Properties prop = new Properties();
