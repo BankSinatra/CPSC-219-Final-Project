@@ -32,7 +32,7 @@ public class HeadCircumference {
 		else if (62 <= measurement && measurement < 64) {
 			size = "xx large";
 		}
-		else if (64 <= measurement && measurement <= 65) {
+		else if (64 <= measurement && measurement < 65) {
 			size = "xxx large";
 		}
 		return size;

@@ -5,7 +5,8 @@ import application.Measurement;
 /**
  * This application will take the bust measurement and find the clothing size based on the 
  * relevant clothing options for the measurement.
- * @author CS219-user
+ * @author Shannon Pett
+ * @author Eyram Ekpe
  *
  */
 public class Bust {
@@ -14,7 +15,8 @@ public class Bust {
 	private final int[] femaleSizeValues =  {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
 
 	/**
-	 * empty constructor
+	 * Constructor that creates a bust object
+	 * @param measurement a measurement that will be used to calculate clothing sizes
 	 */
 	public Bust(Measurement measurement) {
 		this.measurement = measurement;

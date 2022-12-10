@@ -4,7 +4,8 @@ import application.Measurement;
 
 /**
  * This application will take the foot length measurement and find the shoe size.
- * @author CS219-user
+ * @author Shannon Pett
+ * @author Eyram Ekpe
  *
  */
 public class FootLength {
@@ -16,7 +17,6 @@ public class FootLength {
 	}
 
 	// shoes sizes from https://www.zappos.com/c/shoe-size-conversion
-	// must be ran if men
 
 	/**
 	 * Takes measurement and checks for which men's size range it fits into and then assigns size.
@@ -62,6 +62,11 @@ public class FootLength {
 		return size;
 	}
 
+	/**
+	 * Function that gets a shoe measurement depending on the sex of the user.
+	 * @param male the sex of the user
+	 * @param m the foot measurement of the user
+	 */
 	public String getShoes(boolean male, Measurement m) throws InvalidSizeException {
 		if (male) {
 			return calculateShoesMen(m);
@@ -75,6 +80,7 @@ public class FootLength {
 	 *
 	 * @param m is the Measurement value from user for foot length
 	 * @return string stating the shoe size
+	 * @throws InvalidSizeException useful for error messages
 	 */
 	private String calculateShoesWomen(Measurement m) throws InvalidSizeException { // size 4-10// size 4-10 cm
 			String size = "";
