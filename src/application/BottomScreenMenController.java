@@ -7,6 +7,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+/**
+ * Controller for men's pants. Definitely could be optimized but ran out of time sorry
+ * @author Eyram Ekpe
+ */
 public class BottomScreenMenController{
 
     private final SettingsHolder settingsHolder = SettingsHolder.getInstance();
@@ -27,7 +31,10 @@ public class BottomScreenMenController{
     @FXML
     private Label label_size_results;
 
-
+    /**
+     * Returns the bottom size for men
+     * @param actionEvent Javafx's parameter for getting event details
+     */
     public void getMensBottomSize(ActionEvent actionEvent) {
         Measurement m = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
         Waist myWaist = new Waist(male,m);
@@ -39,9 +46,15 @@ public class BottomScreenMenController{
         } catch (InvalidSizeException e) {
             errorLabel.setText(e.getMessage());
             errorLabel.setVisible(true);
+        } catch (NumberFormatException e) {
+            errorLabel.setText("Please enter a number");
+            errorLabel.setVisible(true);
         }
     }
 
+    /**
+     * Setting up units and text for the text field
+     */
     public void initialize(){
         label_unit.setText(settingsHolder.getSettings().getUnitString());
         String text = String.valueOf(settingsHolder.getSettings().getMeasurements().getWaist()) ;

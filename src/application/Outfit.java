@@ -23,7 +23,6 @@ public class Outfit {
  * @param utemperature the u temperature is the set upper temperature
  * bound
  */
-
 	public Outfit(String name, double ltemperature, double utemperature) {
 		this.name = name;
 		this.uppertemperature = new Temperature(utemperature);

@@ -2,6 +2,14 @@ package application.clothingModel;
 
 import application.Measurement;
 
+/**
+ * This application will take the hip measurement and find the complementary clothing size for the hips
+ * Size conversions taken from: https://www.asos.com/us/discover/size-charts/
+ * @author Shannon Pett
+ * @author Eyram Ekpe
+ *
+ */
+
 public class Hip {
     Measurement measurement;
 
@@ -12,6 +20,11 @@ public class Hip {
         this.measurement = measurement;
     }
 
+    /**
+     * This function gets the clothing size for the hips size
+     * @throws InvalidSizeException Sends message if the message isn't good enough
+     *
+     */
     public int getHipSize() throws InvalidSizeException {
         double m = measurement.getCentimetersValue();
         if (m < 83.5){

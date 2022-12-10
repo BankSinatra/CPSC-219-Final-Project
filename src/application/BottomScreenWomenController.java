@@ -7,6 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+/**
+ * Controller for women's pants. Definitely could be optimized, but I ran out of time sorry
+ * @author Eyram Ekpe
+ */
 public class BottomScreenWomenController {
 
     private Settings settings = SettingsHolder.getInstance().getSettings();
@@ -21,6 +25,10 @@ public class BottomScreenWomenController {
     public Label hips_errorLabel;
     public Label label_size_results;
 
+    /**
+     * Displays the bottom size for women to it's window
+     * @param actionEvent Javafx's parameter for getting event details
+     */
     public void getWomensBottomSize(ActionEvent actionEvent) {
         Measurement w = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
         Measurement h = new Measurement(measureUnit, Double.parseDouble(tf_waist.getText()));
@@ -56,6 +64,9 @@ public class BottomScreenWomenController {
         }
     }
 
+    /**
+     * Setting up units and text for the text field
+     */
     public void initialize(){
         label_unit.setText(settings.getUnitString());
         String waistText = String.valueOf(bodyMeasurements.getWaist()) ;

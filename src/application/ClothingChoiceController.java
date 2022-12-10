@@ -38,6 +38,7 @@ public class ClothingChoiceController{
     /**
      * When hat button is clicked application will know that hats need to be calculated.
      * @param event triggered when button is clicked
+     * @throws IOException
      */
     @FXML
     void calculateHatSize(ActionEvent event) throws IOException {
@@ -54,8 +55,8 @@ public class ClothingChoiceController{
     /**
      * When shoe button is clicked application will know that shoe size needs to be calculated.
      * @param event triggered when button is clicked
+     * @throws IOException
      */
-
     @FXML
     void calculateShoeSize (ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("ShoeScreen.fxml"));
@@ -71,6 +72,7 @@ public class ClothingChoiceController{
     /**
      * When tops button is clicked application will know that tops size need to be calculated.
      * @param event triggered when button is clicked
+     * @throws IOException
      */
     @FXML
     void calculateTopsSize (ActionEvent event) throws IOException {
@@ -113,15 +115,5 @@ public class ClothingChoiceController{
         //Open in new window
         primaryStage.show();
     }
-    
-    /**
-     * When get size button is clicked application will get size.
-     * @param event triggered when button is clicked
-     */
-    @FXML
-    void calculateSize (ActionEvent event) {
-    	System.out.println("get size button clicked");
-    }
-
 }
 

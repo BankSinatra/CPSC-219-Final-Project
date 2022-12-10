@@ -1,5 +1,8 @@
 package application;
 
+/**
+ * Settings holder singleton
+ */
 public final class SettingsHolder {
     private Settings settings;
 

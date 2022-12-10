@@ -17,7 +17,10 @@ public class Waist{
     }
 
 
-    //When considering pant size, waist circumference in inches is the only important thing
+    /**
+     * Gets a bottom size for a person based on waist measurements. Is a unisex measurement according to ASOS
+     * @author Eyram Ekpe
+     */
     public int getBottomsSize() throws InvalidSizeException {
         double m = measurement.getInchesValue();
         if (m < 24){
@@ -29,7 +32,10 @@ public class Waist{
         return (int) Math.ceil(m);
     }
 
-    //Women's top size is dependent on key value constants on the top;
+    /**
+     * Gets a top size for a person based on the waist measurements.
+     * @author Eyram Ekpe
+     */
     public int getFemaleTopSize() throws InvalidSizeException {
         double m = measurement.getCentimetersValue();
         if (m < 60){

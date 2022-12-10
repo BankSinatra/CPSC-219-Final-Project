@@ -26,12 +26,22 @@ public class OutfitController {
 
 	private Temperature t;
 
+	/**
+	 * closes and goes back to main scene
+	 * @param event
+	 */
 	@FXML
 	void switchToHomeScene(ActionEvent event) {
 			Stage stage = (Stage) temperatureTextfield.getScene().getWindow();
 			stage.close();
 	}
 
+	/**
+	 *
+	 * @param unit gets the unit string value
+	 * @param temp gets a temperature value
+	 * @throws OutfitCreatorException if the temperature aren't real
+	 */
 	private void validateInput(String unit, String temp) throws OutfitCreatorException{
 		if(unit == null && temp.equals("")){
 			throw new OutfitCreatorException("Please pick a unit and a temperature");
