@@ -89,6 +89,8 @@ public class BodyMeasurements {
 	 * @return value of waist measurement
 	 */
 	double getWaist() {
+		System.out.println("Getting Waist");
+		System.out.println(this.waist);
 		return waist;
 	}
 
@@ -97,7 +99,10 @@ public class BodyMeasurements {
 	 * @param waist as a double is used to set the instance variable.
 	 */
 	void setWaist(double waist) {
+		System.out.println(this.waist);
+		System.out.println("Setting Waist");
 		this.waist = waist;
+		System.out.println(this.waist);
 	}
 	
 	/**

@@ -10,6 +10,9 @@ import application.Measurement;
  */
 public class Bust {
 	Measurement measurement;
+	private final double[] femaleSizeKeys = {78, 80.5, 83, 88, 93, 98, 103, 110.5, 116, 123};
+	private final int[] femaleSizeValues =  {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
+
 	/**
 	 * empty constructor
 	 */
@@ -19,36 +22,20 @@ public class Bust {
 
 	/**
 	 * Takes measurement and checks for which size range it fits into and then assigns size.
-	 * @param measurement is the double value from user for bust size
 	 * @return string stating the size of clothing
 	 */
-	public String getWomenTops(Measurement m) throws InvalidSizeException {
-		String size = "";
-		double measurement = m.getCentimetersValue();
-		if (measurement < 78) {
-			throw new InvalidSizeException("This calculator does not support foot sizes this small");
-		} else if (measurement > 103) {
-			throw new InvalidSizeException("This calculator does not support foot sizes this large");
+	public int getWomenTops() throws InvalidSizeException {
+		double m = this.measurement.getCentimetersValue();
+		if (m < 78) {
+			throw new InvalidSizeException("This calculator does not support bust sizes this small");
+		} else if (m > 123) {
+			throw new InvalidSizeException("This calculator does not support bust sizes this large");
 		}
-		if (78 <= measurement && measurement < 80.5) {
-			size = "extra small";
+		int i = 0;
+		while(i < femaleSizeKeys.length && m > femaleSizeKeys[i]){
+			i++;
 		}
-		else if (80.5 <= measurement && measurement < 83) {
-			size = "small";
-		}
-		else if (83 <= measurement && measurement < 88) {
-			size = "medium";
-		}
-		else if (88 <= measurement && measurement < 93) {
-			size = "large";
-		}
-		else if (93 <= measurement && measurement < 98) {
-			size = "extra large";
-		}
-		else if (98 <= measurement && measurement < 103) {
-			size = "xx large";
-		}
-		return size;
+		return femaleSizeValues[i];
 	}
 	
 

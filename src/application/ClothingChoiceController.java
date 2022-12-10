@@ -86,8 +86,22 @@ public class ClothingChoiceController{
      * @param event triggered when button is clicked
      */
     @FXML
-    void calculateTopsSize (ActionEvent event) {
-    	boolean tops = true;
+    void calculateTopsSize (ActionEvent event) throws IOException {
+        FXMLLoader loader;
+        if (settings.isMale()){
+            loader = new FXMLLoader(getClass().getResource("BottomScreenMen.fxml"));
+        }else{
+            loader = new FXMLLoader(getClass().getResource("TopScreenWomen.fxml"));
+        }
+        VBox root = loader.load();
+        Scene scene = new Scene(root);
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Bottoms");
+        primaryStage.setScene(scene);
+
+        //Open in new window
+        primaryStage.show();
+
     }
     
    /**

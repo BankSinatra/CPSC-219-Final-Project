@@ -57,15 +57,12 @@ public class BottomScreenWomenController {
     }
 
     public void initialize(){
-        System.out.println("Init");
         label_unit.setText(settings.getUnitString());
         String waistText = String.valueOf(bodyMeasurements.getWaist()) ;
-        System.out.println("Init2");
         tf_waist.setText(waistText);
 
         label_unit_2.setText(settings.getUnitString());
         String hipsText = String.valueOf(bodyMeasurements.getHips());
         tf_hips.setText(hipsText);
-        System.out.println("Init3");
     }
 }
