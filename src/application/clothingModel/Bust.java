@@ -10,7 +10,7 @@ import application.Measurement;
  *
  */
 public class Bust {
-	Measurement measurement;
+	private Measurement measurement;
 	private final double[] femaleSizeKeys = {78, 80.5, 83, 88, 93, 98, 103, 110.5, 116, 123};
 	private final int[] femaleSizeValues =  {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
 
