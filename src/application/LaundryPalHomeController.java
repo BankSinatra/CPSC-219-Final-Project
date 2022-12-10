@@ -152,11 +152,22 @@ public class LaundryPalHomeController {
 
 		private final ArrayList<Laundry> iconList = new ArrayList<>();
 
+		/**
+	 	*
+	 	* @param event Javafx's parameter for getting event details
+	 	*/
 		public void switchToHomeScene (ActionEvent event) {
 			Stage stage = (Stage) results_pane.getScene().getWindow();
 			stage.close();
 		}
-    
+
+	/**
+	 * Binds an image to a button and associates an image to it. Also sets styles for it
+	 * @param location The location of the image we want to use
+	 * @param btn The button we want to bind the image to
+	 * @param instructions The laundry instructions related to the button
+	 * @throws FileNotFoundException If the location of the image is wrong
+	 */
 	    private void bindImage(String location, Button btn, String instructions) throws FileNotFoundException {
 			FileInputStream file = new FileInputStream(location);
 	        Image img = new Image(file);
@@ -202,7 +213,12 @@ public class LaundryPalHomeController {
 			});
 	    }
 
-		//Helper function to format the enum name to a neater name
+	/**
+	 * //Helper function to format the enum name to a neater name
+	 * @param string The enum lowercase name
+	 * @return The enum name with a capital letter for the first letter and lowercase for the rest
+	 */
+
 		private String formatEnum(String string){
 			StringBuilder stringBuilder = new StringBuilder();
 			char[] s = string.toCharArray();
@@ -220,7 +236,10 @@ public class LaundryPalHomeController {
 			return stringBuilder.toString();
 		}
 
-		@FXML
+	/**
+	 * Calculates which instructions to display. Uses the enum classes to categorize in the enum declaration order
+	 */
+	@FXML
 		public void calculateLaundry(){
 			//Create the layout and inject it into the vbox pane
 			results_pane.getChildren().clear();
@@ -254,8 +273,11 @@ public class LaundryPalHomeController {
 			}
 
 		}
-	    
-	    public void initialize() {
+
+	/**
+	 * This just binds all the buttons to a certain image and instruction
+	 */
+	public void initialize() {
 	        try{
 				//Washing
 	            bindImage("Resources/LaundrySymbols/Washing/Wash.svg.png", btn_wash, "Wash your article of clothing in water");
