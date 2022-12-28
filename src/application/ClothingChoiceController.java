@@ -79,7 +79,7 @@ public class ClothingChoiceController{
      * @throws IOException
      */
     @FXML
-    void calculateTopsSize (ActionEvent event) throws IOException {
+    void calculateTopsSize (ActionEvent event){
         BodyPart[] BPlist;
         SizeDialog SD;
         if (settings.isMale()){
@@ -87,6 +87,7 @@ public class ClothingChoiceController{
         }else{
             BPlist = new BodyPart[]{new Bust(), new Hip(), new Waist(settings.isMale())};
         }
+
         SD = new SizeDialog(ClothingType.TOP, settings.getUnitMeasurement(), BPlist);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Tops");
@@ -95,7 +96,6 @@ public class ClothingChoiceController{
 
         //Open in new window
         primaryStage.show();
-
     }
     
    /**
@@ -104,18 +104,20 @@ public class ClothingChoiceController{
     * @throws IOException
     */
     @FXML
-    void calculateBottomsSize (ActionEvent event) throws IOException {
-        FXMLLoader loader;
+    void calculateBottomsSize (ActionEvent event){
+        BodyPart[] BPlist;
+        SizeDialog SD;
         if (settings.isMale()){
-            loader = new FXMLLoader(getClass().getResource("BottomScreenMen.fxml"));
+            BPlist = new BodyPart[]{new Waist(settings.isMale())};
         }else{
-            loader = new FXMLLoader(getClass().getResource("BottomScreenWomen.fxml"));
+            BPlist = new BodyPart[]{new Waist(settings.isMale()), new Hip()};
         }
-        VBox root = loader.load();
-        Scene scene = new Scene(root);
+
+        SD = new SizeDialog(ClothingType.BOTTOM, settings.getUnitMeasurement(), BPlist);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Bottoms");
-        primaryStage.setScene(scene);
+        Scene quizGradesScene = new Scene(SD);
+        primaryStage.setScene(quizGradesScene);
 
         //Open in new window
         primaryStage.show();
