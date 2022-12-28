@@ -6,21 +6,28 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 
+import java.util.Locale;
+
 public class BodyField extends VBox {
-    String name = null;
-    MeasureUnit unit = MeasureUnit.CM;
-    String errorText = "";
+    MeasureUnit unit;
+    Label errorTF = new Label();
     TextField textField = new TextField();
     Label unitLabel = new Label();
     private HBox hBox = new HBox();
 
-    BodyField(String name, MeasureUnit unit, String errorText){
+    BodyField(String name, MeasureUnit unit){
+        this.unit = unit;
+
         TextField nameTF = new TextField(name);
         nameTF.setFont(Font.font("System Bold", 18));
         this.getChildren().add(nameTF);
         this.getChildren().add(hBox);
         hBox.getChildren().add(textField);
-        hBox.getChildren().add(unitLabel);
-    }
 
+        unitLabel.setText(unit.toString().toLowerCase(Locale.ROOT));
+        hBox.getChildren().add(unitLabel);
+
+        errorTF.setVisible(false);
+        this.getChildren().add(errorTF);
+    }
 }
