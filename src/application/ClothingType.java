@@ -1,5 +1,6 @@
 package application;
 
 public enum ClothingType {
-    TOP
+    TOP,
+    BOTTOM
 }
