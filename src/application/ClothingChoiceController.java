@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 
 import application.clothingModel.Bust;
+import application.clothingModel.Chest;
 import application.clothingModel.Hip;
 import application.clothingModel.Waist;
 import javafx.event.ActionEvent;
@@ -79,14 +80,14 @@ public class ClothingChoiceController{
      */
     @FXML
     void calculateTopsSize (ActionEvent event) throws IOException {
-        BodyPart[] BPlist = null;
-        SizeDialog SD = null;
+        BodyPart[] BPlist;
+        SizeDialog SD;
         if (settings.isMale()){
-            //BPlist = {new Chest()}
+            BPlist = new BodyPart[]{new Chest()};
         }else{
             BPlist = new BodyPart[]{new Bust(), new Hip(), new Waist(settings.isMale())};
-            SD = new SizeDialog(ClothingType.TOP, settings.getUnitMeasurement(), BPlist);
         }
+        SD = new SizeDialog(ClothingType.TOP, settings.getUnitMeasurement(), BPlist);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Tops");
         Scene quizGradesScene = new Scene(SD);
