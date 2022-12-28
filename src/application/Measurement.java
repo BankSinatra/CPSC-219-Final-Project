@@ -1,8 +1,8 @@
 package application;
 
 public class Measurement {
-    MeasureUnit unit;
-    double value;
+    private MeasureUnit unit;
+    private double value;
 /**
  * intializes and constructs the instance variables in measurement
  * @param unit becomes the class variables unit
@@ -10,8 +10,13 @@ public class Measurement {
  */
     public Measurement(MeasureUnit unit, double value){
         this.unit = unit;
-        this.value = value;
+        this.setValue(value);
     }
+
+    public Measurement(MeasureUnit unit){
+        this.unit = unit;
+    }
+
 /**
  * Converts the unit value to centremeters
  * @return returns the value after converting to centremeters only if
@@ -19,9 +24,9 @@ public class Measurement {
  */
     public double getCentimetersValue(){
         if(unit == MeasureUnit.INCHES){
-            return value * 2.54;
+            return getValue() * 2.54;
         }else{
-            return value;
+            return getValue();
         }
     }
 /**
@@ -31,9 +36,17 @@ public class Measurement {
  */
     public double getInchesValue(){
         if(unit == MeasureUnit.CM){
-            return value / 2.54;
+            return getValue() / 2.54;
         }else{
-            return value;
+            return getValue();
         }
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
     }
 }
