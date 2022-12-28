@@ -1,6 +1,10 @@
 package application.clothingModel;
 
+import application.BodyPart;
+import application.ClothingType;
 import application.Measurement;
+
+import java.util.Arrays;
 
 /**
  * This application will take the bust measurement and find the clothing size based on the 
@@ -9,7 +13,7 @@ import application.Measurement;
  * @author Eyram Ekpe
  *
  */
-public class Bust {
+public class Bust implements BodyPart {
 	private Measurement measurement;
 	private final double[] femaleSizeKeys = {78, 80.5, 83, 88, 93, 98, 103, 110.5, 116, 123};
 	private final int[] femaleSizeValues =  {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
@@ -39,6 +43,18 @@ public class Bust {
 		}
 		return femaleSizeValues[i];
 	}
-	
 
+
+	@Override
+	public int getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+		if(clothingType == ClothingType.TOP){
+			return getWomenTops();
+		}
+		throw new InvalidSizeException("Something went wrong");
+	}
+
+	@Override
+	public String toString() {
+		return "Bust";
+	}
 }
