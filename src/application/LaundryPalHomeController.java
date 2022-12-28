@@ -214,7 +214,7 @@ public class LaundryPalHomeController {
 	    }
 
 	/**
-	 * //Helper function to format the enum name to a neater name
+	 * Helper function to format the enum name to a neater name
 	 * @param string The enum lowercase name
 	 * @return The enum name with a capital letter for the first letter and lowercase for the rest
 	 */

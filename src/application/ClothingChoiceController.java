@@ -63,7 +63,7 @@ public class ClothingChoiceController{
         SizeDialog SD;
         BPlist = new BodyPart[]{new FootLength(settings.isMale())};
 
-        SD = new SizeDialog(ClothingType.SHOES, settings.getUnitMeasurement(), BPlist);
+        SD = new NumberSizeDialog(ClothingType.SHOES, settings.getUnitMeasurement(), BPlist);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Shoes");
         Scene quizGradesScene = new Scene(SD);
@@ -87,7 +87,7 @@ public class ClothingChoiceController{
             BPlist = new BodyPart[]{new Bust(), new Hip(), new Waist(settings.isMale())};
         }
 
-        SD = new SizeDialog(ClothingType.TOP, settings.getUnitMeasurement(), BPlist);
+        SD = new NumberSizeDialog(ClothingType.TOP, settings.getUnitMeasurement(), BPlist);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Tops");
         Scene quizGradesScene = new Scene(SD);
@@ -111,7 +111,7 @@ public class ClothingChoiceController{
             BPlist = new BodyPart[]{new Waist(settings.isMale()), new Hip()};
         }
 
-        SD = new SizeDialog(ClothingType.BOTTOM, settings.getUnitMeasurement(), BPlist);
+        SD = new NumberSizeDialog(ClothingType.BOTTOM, settings.getUnitMeasurement(), BPlist);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Bottoms");
         Scene quizGradesScene = new Scene(SD);

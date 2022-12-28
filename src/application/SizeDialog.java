@@ -10,7 +10,6 @@ import java.util.HashMap;
 public class SizeDialog extends VBox {
     private BodyPart[] bodyParts;
     private ClothingType clothingType;
-    private boolean isMale;
     private MeasureUnit units;
     HashMap<BodyField, Measurement> bodyFields = new HashMap<BodyField, Measurement>();
     private Label resultsLabel = new Label();
