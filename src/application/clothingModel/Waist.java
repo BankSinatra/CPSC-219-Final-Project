@@ -1,8 +1,10 @@
 package application.clothingModel;
 
+import application.BodyPart;
+import application.ClothingType;
 import application.Measurement;
 
-public class Waist{
+public class Waist implements BodyPart {
     Boolean male;
     Measurement measurement;
 
@@ -14,6 +16,10 @@ public class Waist{
     public Waist(Boolean male, Measurement measurement){
         this.male = male;
         this.measurement = measurement;
+    }
+
+    public Waist(Boolean male) {
+        this.male = male;
     }
 
 
@@ -50,4 +56,23 @@ public class Waist{
         return femalesTopsSizeValues[i];
     }
 
+    @Override
+    public int getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+        if(clothingType == ClothingType.TOP && !this.male){
+            return getFemaleTopSize();
+        }else if(clothingType == ClothingType.BOTTOM){
+            return getBottomsSize();
+        }
+        throw new InvalidSizeException("Something went wrong");
+    }
+
+    @Override
+    public void setMeasurement(Measurement measurement) {
+        this.measurement = measurement;
+    }
+
+    @Override
+    public String toString() {
+        return "Hips";
+    }
 }

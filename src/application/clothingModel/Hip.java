@@ -1,5 +1,7 @@
 package application.clothingModel;
 
+import application.BodyPart;
+import application.ClothingType;
 import application.Measurement;
 
 /**
@@ -10,7 +12,7 @@ import application.Measurement;
  *
  */
 
-public class Hip {
+public class Hip implements BodyPart {
     Measurement measurement;
 
     private final double[] femaleSizeKeys = {83.5, 86, 88.5, 93.5, 98.5, 103.5, 108.5, 116, 116.5, 123.5};
@@ -19,6 +21,8 @@ public class Hip {
     public Hip(Measurement measurement){
         this.measurement = measurement;
     }
+
+    public Hip(){}
 
     /**
      * This function gets the clothing size for the hips size
@@ -39,4 +43,21 @@ public class Hip {
         return femaleSizeValues[i];
     }
 
+    @Override
+    public int getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+        if(clothingType == ClothingType.TOP){
+            return getHipSize();
+        }
+        throw new InvalidSizeException("Something went wrong");
+    }
+
+    @Override
+    public void setMeasurement(Measurement measurement) {
+        this.measurement = measurement;
+    }
+
+    @Override
+    public String toString() {
+        return "Hips";
+    }
 }
