@@ -2,5 +2,6 @@ package application;
 
 public enum ClothingType {
     TOP,
-    BOTTOM
+    BOTTOM,
+    SHOES;
 }

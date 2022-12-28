@@ -2,10 +2,7 @@ package application;
 
 import java.io.IOException;
 
-import application.clothingModel.Bust;
-import application.clothingModel.Chest;
-import application.clothingModel.Hip;
-import application.clothingModel.Waist;
+import application.clothingModel.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,16 +56,19 @@ public class ClothingChoiceController{
     /**
      * When shoe button is clicked application will know that shoe size needs to be calculated.
      * @param event triggered when button is clicked
-     * @throws IOException
      */
     @FXML
-    void calculateShoeSize (ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ShoeScreen.fxml"));
-        VBox root = loader.load();
-        Scene scene = new Scene(root);
+    void calculateShoeSize (ActionEvent event){
+        BodyPart[] BPlist;
+        SizeDialog SD;
+        BPlist = new BodyPart[]{new FootLength(settings.isMale())};
+
+        SD = new SizeDialog(ClothingType.SHOES, settings.getUnitMeasurement(), BPlist);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Shoes");
-        primaryStage.setScene(scene);
+        Scene quizGradesScene = new Scene(SD);
+        primaryStage.setScene(quizGradesScene);
+
         //Open in new window
         primaryStage.show();
     }
@@ -76,7 +76,6 @@ public class ClothingChoiceController{
     /**
      * When tops button is clicked application will know that tops size need to be calculated.
      * @param event triggered when button is clicked
-     * @throws IOException
      */
     @FXML
     void calculateTopsSize (ActionEvent event){
@@ -101,7 +100,6 @@ public class ClothingChoiceController{
    /**
     * When bottoms button is clicked new scene will open prompting user for correlating sizes
     * @param event triggered once bottoms button is clicked.
-    * @throws IOException
     */
     @FXML
     void calculateBottomsSize (ActionEvent event){

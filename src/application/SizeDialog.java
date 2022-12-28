@@ -47,7 +47,7 @@ public class SizeDialog extends VBox {
                 bf.getBodyPart().setMeasurement(bodyFields.get(bf));
                 BodyPart bodyPart = bf.getBodyPart();
 
-                int bodyPartMeasurement = bodyPart.getMeasurement(clothingType);
+                int bodyPartMeasurement = (int) bodyPart.getMeasurement(clothingType);
                 if(bodyPartMeasurement > size){
                     size = bodyPartMeasurement;
                 }
