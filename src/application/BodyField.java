@@ -10,7 +10,7 @@ import java.util.Locale;
 
 public class BodyField extends VBox{
     MeasureUnit unit;
-    Label errorTF = new Label();
+    Label errorLabel = new Label();
     TextField textField = new TextField();
     Label unitLabel = new Label();
     private HBox hBox = new HBox();
@@ -20,17 +20,25 @@ public class BodyField extends VBox{
         this.unit = unit;
         this.bodyPart = bodyPart;
 
-        TextField nameTF = new TextField(name);
-        nameTF.setFont(Font.font("System Bold", 18));
-        this.getChildren().add(nameTF);
+        Label nameLabel = new Label(name);
+        nameLabel.setFont(Font.font("System Bold", 18));
+        this.getChildren().add(nameLabel);
         this.getChildren().add(hBox);
         hBox.getChildren().add(textField);
 
         unitLabel.setText(unit.toString().toLowerCase(Locale.ROOT));
         hBox.getChildren().add(unitLabel);
 
-        errorTF.setVisible(false);
-        this.getChildren().add(errorTF);
+        errorLabel.setVisible(false);
+        this.getChildren().add(errorLabel);
+    }
+
+    public BodyPart getBodyPart(){
+        return bodyPart;
+    }
+
+    public Label getErrorLabel() {
+        return errorLabel;
     }
 
     public TextField getTextField(){
