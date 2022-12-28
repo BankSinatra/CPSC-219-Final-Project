@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 
+import application.clothingModel.Bust;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -76,17 +77,18 @@ public class ClothingChoiceController{
      */
     @FXML
     void calculateTopsSize (ActionEvent event) throws IOException {
-        FXMLLoader loader;
+        BodyPart[] BPlist = null;
+        SizeDialog SD = null;
         if (settings.isMale()){
-            loader = new FXMLLoader(getClass().getResource("TopScreenMen.fxml"));
+            //BPlist = {new Chest()}
         }else{
-            loader = new FXMLLoader(getClass().getResource("TopScreenWomen.fxml"));
+            BPlist = new BodyPart[]{new Bust()};
+            SD = new SizeDialog(ClothingType.TOP, settings.isMale(), settings.getUnitMeasurement(), BPlist);
         }
-        VBox root = loader.load();
-        Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Tops");
-        primaryStage.setScene(scene);
+        Scene quizGradesScene = new Scene(SD);
+        primaryStage.setScene(quizGradesScene);
 
         //Open in new window
         primaryStage.show();
