@@ -4,8 +4,6 @@ import application.BodyPart;
 import application.ClothingType;
 import application.Measurement;
 
-import java.util.Arrays;
-
 /**
  * This application will take the bust measurement and find the clothing size based on the 
  * relevant clothing options for the measurement.
@@ -48,7 +46,7 @@ public class Bust implements BodyPart {
 
 
 	@Override
-	public int getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+	public double getMeasurement(ClothingType clothingType) throws InvalidSizeException {
 		if(clothingType == ClothingType.TOP){
 			return getWomenTops();
 		}
