@@ -29,6 +29,7 @@ public class BodyField extends VBox{
         unitLabel.setText(unit.toString().toLowerCase(Locale.ROOT));
         hBox.getChildren().add(unitLabel);
 
+        errorLabel.setStyle("-fx-text-fill: red;");
         errorLabel.setVisible(false);
         this.getChildren().add(errorLabel);
     }
