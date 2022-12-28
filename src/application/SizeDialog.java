@@ -15,10 +15,9 @@ public class SizeDialog extends VBox {
     HashMap<BodyField, Measurement> bodyFields = new HashMap<BodyField, Measurement>();
     private Label resultsLabel = new Label();
 
-    SizeDialog(ClothingType clothingType, boolean isMale, MeasureUnit units, BodyPart[] bodyParts1){
+    SizeDialog(ClothingType clothingType,MeasureUnit units, BodyPart[] bodyParts1){
         this.bodyParts = bodyParts1;
         this.clothingType = clothingType;
-        this.isMale = isMale;
         this.units = units;
         setTextViews(bodyParts);
 
@@ -40,6 +39,7 @@ public class SizeDialog extends VBox {
 
     private void calculateSize(){
         int size = 0;
+        boolean problem = false;
         this.resultsLabel.setVisible(false);
         for(BodyField bf : bodyFields.keySet()){
             try {
@@ -55,14 +55,18 @@ public class SizeDialog extends VBox {
             }catch (InvalidSizeException e) {
                 bf.getErrorLabel().setText(e.getMessage());
                 bf.getErrorLabel().setVisible(true);
+                problem = true;
             }catch (NumberFormatException e){
                 bf.getErrorLabel().setText("Please enter a number");
                 bf.getErrorLabel().setVisible(true);
+                problem = true;
             }
 
         }
         this.resultsLabel.setText(String.valueOf(size));
-        this.resultsLabel.setVisible(true);
+        if(!problem){
+            this.resultsLabel.setVisible(true);
+        }
     }
 
 }
