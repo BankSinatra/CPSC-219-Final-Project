@@ -3,6 +3,8 @@ package application;
 import java.io.IOException;
 
 import application.clothingModel.Bust;
+import application.clothingModel.Hip;
+import application.clothingModel.Waist;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -82,8 +84,8 @@ public class ClothingChoiceController{
         if (settings.isMale()){
             //BPlist = {new Chest()}
         }else{
-            BPlist = new BodyPart[]{new Bust()};
-            SD = new SizeDialog(ClothingType.TOP, settings.isMale(), settings.getUnitMeasurement(), BPlist);
+            BPlist = new BodyPart[]{new Bust(), new Hip(), new Waist(settings.isMale())};
+            SD = new SizeDialog(ClothingType.TOP, settings.getUnitMeasurement(), BPlist);
         }
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Tops");
