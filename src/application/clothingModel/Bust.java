@@ -35,9 +35,9 @@ public class Bust implements BodyPart {
 	public int getWomenTops() throws InvalidSizeException {
 		double m = this.measurement.getCentimetersValue();
 		if (m < 78) {
-			throw new InvalidSizeException("This calculator does not support bust sizes this small");
+			throw new InvalidSizeException("This calculator does not support sizes this small");
 		} else if (m > 123) {
-			throw new InvalidSizeException("This calculator does not support bust sizes this large");
+			throw new InvalidSizeException("This calculator does not support sizes this large");
 		}
 		int i = 0;
 		while(i < femaleSizeKeys.length && m > femaleSizeKeys[i]){
