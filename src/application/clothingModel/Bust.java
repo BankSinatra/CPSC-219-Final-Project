@@ -26,6 +26,8 @@ public class Bust implements BodyPart {
 		this.measurement = measurement;
 	}
 
+	public Bust(){}
+
 	/**
 	 * Takes measurement and checks for which size range it fits into and then assigns size.
 	 * @return string stating the size of clothing
@@ -51,6 +53,11 @@ public class Bust implements BodyPart {
 			return getWomenTops();
 		}
 		throw new InvalidSizeException("Something went wrong");
+	}
+
+	@Override
+	public void setMeasurement(Measurement measurement) {
+		this.measurement = measurement;
 	}
 
 	@Override
