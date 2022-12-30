@@ -65,7 +65,7 @@ public class HomeScreenController{
 	 */
     @FXML
     void switchToOutfitCreatorScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("OutfitCreatorView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("OutfitCreator/OutfitCreatorView.fxml"));
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Size Calculator");
