@@ -43,12 +43,16 @@ public class ClothingChoiceController{
      */
     @FXML
     void calculateHatSize(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("HatScreen.fxml"));
-        VBox root = loader.load();
-        Scene scene = new Scene(root);
+        BodyPart[] BPlist;
+        SizeDialog SD;
+        BPlist = new BodyPart[]{new HeadCircumference()};
+
+        SD = new HeadSizeDialog(ClothingType.HAT, settings.getUnitMeasurement(), BPlist);
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("Hats");
-        primaryStage.setScene(scene);
+        primaryStage.setTitle("Hat");
+        Scene quizGradesScene = new Scene(SD);
+        primaryStage.setScene(quizGradesScene);
+
         //Open in new window
         primaryStage.show();
     }
