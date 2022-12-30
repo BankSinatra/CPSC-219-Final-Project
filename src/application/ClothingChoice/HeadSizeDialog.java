@@ -1,9 +1,11 @@
-package application;
+package application.ClothingChoice;
 
-import application.clothingModel.HeadCircumference;
-import application.clothingModel.InvalidSizeException;
+import application.*;
+import application.ClothingChoice.ClothingChoiceModel.BodyPart;
+import application.ClothingChoice.ClothingChoiceModel.HeadCircumference;
+import application.ClothingChoice.ClothingChoiceModel.InvalidSizeException;
 
-public class HeadSizeDialog extends SizeDialog{
+public class HeadSizeDialog extends SizeDialog {
     HeadSizeDialog(ClothingType clothingType, MeasureUnit units, BodyPart[] bodyParts1) {
         super(clothingType, units, bodyParts1);
     }

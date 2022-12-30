@@ -1,5 +1,7 @@
-package application;
+package application.ClothingChoice;
 
+import application.ClothingChoice.ClothingChoiceModel.BodyPart;
+import application.MeasureUnit;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;

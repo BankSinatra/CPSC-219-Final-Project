@@ -1,8 +1,11 @@
-package application;
+package application.ClothingChoice;
 
-import application.clothingModel.InvalidSizeException;
+import application.ClothingChoice.ClothingChoiceModel.BodyPart;
+import application.ClothingType;
+import application.MeasureUnit;
+import application.ClothingChoice.ClothingChoiceModel.InvalidSizeException;
 
-public class NumberSizeDialog extends SizeDialog{
+public class NumberSizeDialog extends SizeDialog {
     NumberSizeDialog(ClothingType clothingType, MeasureUnit units, BodyPart[] bodyParts1) {
         super(clothingType, units, bodyParts1);
     }

@@ -1,5 +1,7 @@
-package application;
+package application.ClothingChoice;
 
+import application.*;
+import application.ClothingChoice.ClothingChoiceModel.BodyPart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
