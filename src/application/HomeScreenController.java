@@ -28,7 +28,7 @@ public class HomeScreenController{
     @FXML
     void switchToClothingChoiceScene(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ClothingChoiceView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ClothingChoice/ClothingChoiceView.fxml"));
         VBox root = loader.load();
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();

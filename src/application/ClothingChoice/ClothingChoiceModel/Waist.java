@@ -1,6 +1,5 @@
-package application.clothingModel;
+package application.ClothingChoice.ClothingChoiceModel;
 
-import application.BodyPart;
 import application.ClothingType;
 import application.Measurement;
 

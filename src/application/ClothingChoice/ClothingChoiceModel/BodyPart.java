@@ -1,6 +1,7 @@
-package application;
+package application.ClothingChoice.ClothingChoiceModel;
 
-import application.clothingModel.InvalidSizeException;
+import application.ClothingType;
+import application.Measurement;
 
 public interface BodyPart {
     public String getMeasurement(ClothingType clothingType) throws InvalidSizeException;

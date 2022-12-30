@@ -1,4 +1,4 @@
-package application.clothingModel;
+package application.ClothingChoice.ClothingChoiceModel;
 
 /**
  * This class handles when a size is invalid.
