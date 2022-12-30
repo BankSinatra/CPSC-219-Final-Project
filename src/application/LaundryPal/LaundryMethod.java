@@ -1,4 +1,4 @@
-package application;
+package application.LaundryPal;
 
 /**
  * Enum class for listing different laundry types. Better than strings because these are well-defined.

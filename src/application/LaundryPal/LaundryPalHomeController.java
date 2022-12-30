@@ -1,5 +1,7 @@
-package application;
+package application.LaundryPal;
 
+import application.LaundryPal.Laundry;
+import application.LaundryPal.LaundryMethod;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;

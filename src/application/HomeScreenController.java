@@ -47,7 +47,7 @@ public class HomeScreenController{
 	 */
     @FXML
     void switchToLaundryPalScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("LaundryPalHome.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LaundryPal/LaundryPalHome.fxml"));
         Scene scene = new Scene(root);
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Settings");
@@ -78,7 +78,7 @@ public class HomeScreenController{
 
     /**
 	 * Allows for scene to be swapped to settings scene.
-	 * @param event is started when button is clicked and will switch scene
+	 * @param actionEvent is started when button is clicked and will switch scene
 	 * @throws IOException
 	 */
     @FXML

@@ -1,4 +1,4 @@
-package application;
+package application.LaundryPal;
 
 /** The class for Laundry objects
  * @author Eyram Ekpe
