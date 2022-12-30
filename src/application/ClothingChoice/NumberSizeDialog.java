@@ -1,7 +1,7 @@
 package application.ClothingChoice;
 
 import application.ClothingChoice.ClothingChoiceModel.BodyPart;
-import application.ClothingType;
+import application.ClothingChoice.ClothingChoiceModel.ClothingType;
 import application.MeasureUnit;
 import application.ClothingChoice.ClothingChoiceModel.InvalidSizeException;
 

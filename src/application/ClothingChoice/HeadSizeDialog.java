@@ -2,6 +2,7 @@ package application.ClothingChoice;
 
 import application.*;
 import application.ClothingChoice.ClothingChoiceModel.BodyPart;
+import application.ClothingChoice.ClothingChoiceModel.ClothingType;
 import application.ClothingChoice.ClothingChoiceModel.HeadCircumference;
 import application.ClothingChoice.ClothingChoiceModel.InvalidSizeException;
 

@@ -1,6 +1,5 @@
 package application.ClothingChoice.ClothingChoiceModel;
 
-import application.ClothingType;
 import application.Measurement;
 
 public class Chest implements BodyPart {
