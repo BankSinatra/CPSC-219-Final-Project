@@ -35,9 +35,9 @@ public class Chest implements BodyPart {
     }
 
     @Override
-    public double getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+    public String getMeasurement(ClothingType clothingType) throws InvalidSizeException {
         if(clothingType == ClothingType.TOP){
-            return getTopSize();
+            return String.valueOf(getTopSize());
         }
         throw new InvalidSizeException("Something went wrong");
     }

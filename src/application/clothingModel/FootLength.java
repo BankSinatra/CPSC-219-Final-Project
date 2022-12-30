@@ -119,9 +119,9 @@ public class FootLength implements BodyPart {
 		}
 
 	@Override
-	public double getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+	public String getMeasurement(ClothingType clothingType) throws InvalidSizeException {
 		if(clothingType == ClothingType.SHOES){
-			return getShoes();
+			return String.valueOf(getShoes());
 		}
 		throw new InvalidSizeException("Something went wrong");
 	}

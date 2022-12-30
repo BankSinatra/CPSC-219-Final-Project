@@ -44,9 +44,9 @@ public class Hip implements BodyPart {
     }
 
     @Override
-    public double getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+    public String getMeasurement(ClothingType clothingType) throws InvalidSizeException {
         if(clothingType == ClothingType.TOP){
-            return getHipSize();
+            return String.valueOf(getHipSize());
         }
         throw new InvalidSizeException("Something went wrong");
     }

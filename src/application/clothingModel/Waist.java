@@ -57,11 +57,11 @@ public class Waist implements BodyPart {
     }
 
     @Override
-    public double getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+    public String getMeasurement(ClothingType clothingType) throws InvalidSizeException {
         if(clothingType == ClothingType.TOP && !this.male){
-            return getFemaleTopSize();
+            return String.valueOf(getFemaleTopSize());
         }else if(clothingType == ClothingType.BOTTOM){
-            return getBottomsSize();
+            return String.valueOf(getBottomsSize());
         }
         throw new InvalidSizeException("Something went wrong");
     }

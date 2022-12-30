@@ -1,5 +1,7 @@
 package application.clothingModel;
 
+import application.BodyPart;
+import application.ClothingType;
 import application.Measurement;
 
 /**
@@ -7,12 +9,10 @@ import application.Measurement;
  * @author CS219-user
  *
  */
-public class HeadCircumference {
+public class HeadCircumference implements BodyPart {
 	Measurement measurement;
 
-	public HeadCircumference(Measurement measurement) {
-		this.measurement = measurement;
-	}
+	public HeadCircumference() {}
 
 	/**
 	 *  Takes measurement and checks for which size range it fits into and then assigns size.
@@ -48,4 +48,18 @@ public class HeadCircumference {
 		return size;
 	}
 
+	public String getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+		if(clothingType == ClothingType.HAT){
+			return getHatSize(measurement);
+		}
+		throw new InvalidSizeException("Something went wrong");
+	}
+
+	public void setMeasurement(Measurement measurement) {
+		this.measurement = measurement;
+	}
+
+	public String toString() {
+		return "Head Circumference";
+	}
 }
