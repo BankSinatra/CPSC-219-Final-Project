@@ -1,4 +1,4 @@
-package application;
+package application.OutfitCreator;
 
 public class OutfitCreatorException extends Exception{
     /**

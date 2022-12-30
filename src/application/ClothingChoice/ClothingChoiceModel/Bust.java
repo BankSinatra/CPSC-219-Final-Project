@@ -1,4 +1,4 @@
-package application.clothingModel;
+package application.ClothingChoice.ClothingChoiceModel;
 
 import application.Measurement;
 
@@ -9,7 +9,7 @@ import application.Measurement;
  * @author Eyram Ekpe
  *
  */
-public class Bust {
+public class Bust implements BodyPart {
 	private Measurement measurement;
 	private final double[] femaleSizeKeys = {78, 80.5, 83, 88, 93, 98, 103, 110.5, 116, 123};
 	private final int[] femaleSizeValues =  {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
@@ -22,6 +22,8 @@ public class Bust {
 		this.measurement = measurement;
 	}
 
+	public Bust(){}
+
 	/**
 	 * Takes measurement and checks for which size range it fits into and then assigns size.
 	 * @return string stating the size of clothing
@@ -29,9 +31,9 @@ public class Bust {
 	public int getWomenTops() throws InvalidSizeException {
 		double m = this.measurement.getCentimetersValue();
 		if (m < 78) {
-			throw new InvalidSizeException("This calculator does not support bust sizes this small");
+			throw new InvalidSizeException("This calculator does not support sizes this small");
 		} else if (m > 123) {
-			throw new InvalidSizeException("This calculator does not support bust sizes this large");
+			throw new InvalidSizeException("This calculator does not support sizes this large");
 		}
 		int i = 0;
 		while(i < femaleSizeKeys.length && m > femaleSizeKeys[i]){
@@ -39,6 +41,23 @@ public class Bust {
 		}
 		return femaleSizeValues[i];
 	}
-	
 
+
+	@Override
+	public String getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+		if(clothingType == ClothingType.TOP){
+			return String.valueOf(getWomenTops());
+		}
+		throw new InvalidSizeException("Something went wrong");
+	}
+
+	@Override
+	public void setMeasurement(Measurement measurement) {
+		this.measurement = measurement;
+	}
+
+	@Override
+	public String toString() {
+		return "Bust";
+	}
 }

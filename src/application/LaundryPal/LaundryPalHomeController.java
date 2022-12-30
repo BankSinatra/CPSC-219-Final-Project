@@ -1,5 +1,7 @@
-package application;
+package application.LaundryPal;
 
+import application.LaundryPal.Laundry;
+import application.LaundryPal.LaundryMethod;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -214,7 +216,7 @@ public class LaundryPalHomeController {
 	    }
 
 	/**
-	 * //Helper function to format the enum name to a neater name
+	 * Helper function to format the enum name to a neater name
 	 * @param string The enum lowercase name
 	 * @return The enum name with a capital letter for the first letter and lowercase for the rest
 	 */

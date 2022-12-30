@@ -1,8 +1,8 @@
-package application.clothingModel;
+package application.ClothingChoice.ClothingChoiceModel;
 
 import application.Measurement;
 
-public class Chest {
+public class Chest implements BodyPart {
     Measurement measurement;
     private final double[] maleSizeKeys = {78, 80.5, 83, 88, 93, 98, 103, 110.5, 116, 123};
     private final int[] maleSizeValues =  {0, 2, 4, 6, 8, 10, 12, 14, 16, 18};
@@ -11,8 +11,7 @@ public class Chest {
      * Constructor that creates a chest object
      * @param measurement a measurement that will be used to calculate clothing sizes
      */
-    public Chest(Measurement measurement) {
-        this.measurement = measurement;
+    public Chest() {
     }
 
     /**
@@ -31,5 +30,23 @@ public class Chest {
             i++;
         }
         return maleSizeValues[i];
+    }
+
+    @Override
+    public String getMeasurement(ClothingType clothingType) throws InvalidSizeException {
+        if(clothingType == ClothingType.TOP){
+            return String.valueOf(getTopSize());
+        }
+        throw new InvalidSizeException("Something went wrong");
+    }
+
+    @Override
+    public void setMeasurement(Measurement measurement) {
+        this.measurement = measurement;
+    }
+
+    @Override
+    public String toString() {
+        return "Chest";
     }
 }
